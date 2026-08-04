@@ -1,0 +1,20 @@
+subject_definitions:
+<Subject 1> is the target woman defined by <Picture 1>. <Video 1> supplies only sword choreography and camera timing. <Audio 1> supplies only synchronized footsteps and sword impacts. <Audio 2> is the voice-timbre reference for <Subject 1> (S1), without copying its original words.
+
+summary:
+[reference generation + audio reference] Generate the target woman performing the referenced sword action with synchronized physical sounds and the assigned voice.
+
+retention_analysis:
+<Picture 1>: fully preserved - target facial identity.
+<Video 1>: reference - sword choreography and camera timing; reject source performer identity, clothing, body shape, and background.
+<Audio 1>: reference - synchronized physical sounds only.
+<Audio 2>: reference - target voice timbre only; reject original words.
+
+detailed_description:
+[Shot 1] The target woman performs the opening sword movement while the camera follows the timing from <Video 1>; footsteps and sword sounds follow <Audio 1>. At 00:02.500, [Shot 2] she lands in a low stance and <Subject 1> (S1) says, <d>[Chinese] 别挡我的路。</d> Her lips close immediately afterward. Preserve the identity from <Picture 1> and exclude all unwanted source-video attributes.
+
+overall_soundscape:
+Synchronized physical sounds reference <Audio 1>; the target voice references <Audio 2> and is bound to <Subject 1> (S1).
+
+non_diegetic_music:
+N/A

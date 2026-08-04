@@ -1,0 +1,19 @@
+{
+  "mode": "fl2va",
+  "profile": "enhanced",
+  "duration": 5,
+  "aspect_ratio": "16:9",
+  "references": [
+    {
+      "type": "picture",
+      "index": 1,
+      "role": "first_frame"
+    },
+    {
+      "type": "picture",
+      "index": 2,
+      "role": "last_frame"
+    }
+  ],
+  "intent": "Interpolate one continuous pose change and land exactly on the last frame."
+}

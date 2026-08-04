@@ -1,0 +1,36 @@
+created 6 runs: cases=1, seeds=2, profiles=['direct', 'concise_structured', 'context_ir_emulation']
+merged 2 review rows from 2 reviewers
+# MiniMax H3 v1.4 replication summary
+
+| Profile | Directions | Evidence |
+|---|---|---|
+| context_ir_emulation | positive / positive | supported_replicated |
+
+test_blind_package_requires_two_reviewers (test_cross_validation_v14.CrossValidationV14Tests.test_blind_package_requires_two_reviewers) ... ok
+test_canonical_hash_is_order_independent (test_cross_validation_v14.CrossValidationV14Tests.test_canonical_hash_is_order_independent) ... ok
+test_matrix_has_case_seed_profile_cartesian_product (test_cross_validation_v14.CrossValidationV14Tests.test_matrix_has_case_seed_profile_cartesian_product) ... ok
+test_matrix_rejects_missing_profile_prompt (test_cross_validation_v14.CrossValidationV14Tests.test_matrix_rejects_missing_profile_prompt) ... ok
+test_matrix_rejects_self_parity_by_default (test_cross_validation_v14.CrossValidationV14Tests.test_matrix_rejects_self_parity_by_default) ... ok
+test_merge_reviews_accepts_distinct_reviewers (test_cross_validation_v14.CrossValidationV14Tests.test_merge_reviews_accepts_distinct_reviewers) ... ok
+test_merge_reviews_rejects_duplicate_reviewer_id (test_cross_validation_v14.CrossValidationV14Tests.test_merge_reviews_rejects_duplicate_reviewer_id) ... ok
+test_non_ref_task_uses_base_metrics (test_cross_validation_v14.CrossValidationV14Tests.test_non_ref_task_uses_base_metrics) ... ok
+test_ref2va_metric_set_contains_audio_and_leakage_controls (test_cross_validation_v14.CrossValidationV14Tests.test_ref2va_metric_set_contains_audio_and_leakage_controls) ... ok
+test_replication_combiner_requires_distinct_environments (test_cross_validation_v14.CrossValidationV14Tests.test_replication_combiner_requires_distinct_environments) ... ok
+test_replication_combiner_supports_consistent_independent_results (test_cross_validation_v14.CrossValidationV14Tests.test_replication_combiner_supports_consistent_independent_results) ... ok
+test_audio_only_rejected (test_refmap_v14.RefMapTests.test_audio_only_rejected) ... ok
+test_holes_are_compacted (test_refmap_v14.RefMapTests.test_holes_are_compacted) ... ok
+test_no_soundtrack_standalone_is_audio1 (test_refmap_v14.RefMapTests.test_no_soundtrack_standalone_is_audio1) ... ok
+test_official_uploaded_workflow_has_two_pictures_only (test_refmap_v14.RefMapTests.test_official_uploaded_workflow_has_two_pictures_only) ... ok
+test_orphan_soundtrack_errors_and_is_ignored (test_refmap_v14.RefMapTests.test_orphan_soundtrack_errors_and_is_ignored) ... ok
+test_two_video_soundtracks_then_voice (test_refmap_v14.RefMapTests.test_two_video_soundtracks_then_voice) ... ok
+test_video_soundtrack_then_standalone (test_refmap_v14.RefMapTests.test_video_soundtrack_then_standalone) ... ok
+test_context_ir_retention_speaker_forbidden (test_validator_v14.ValidatorV14Tests.test_context_ir_retention_speaker_forbidden) ... ok
+test_port_names_fail (test_validator_v14.ValidatorV14Tests.test_port_names_fail) ... ok
+test_valid_direct_example (test_validator_v14.ValidatorV14Tests.test_valid_direct_example) ... ok
+test_voice_needs_speaker_binding (test_validator_v14.ValidatorV14Tests.test_voice_needs_speaker_binding) ... ok
+test_wrong_audio_number_fails (test_validator_v14.ValidatorV14Tests.test_wrong_audio_number_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.009s
+
+OK

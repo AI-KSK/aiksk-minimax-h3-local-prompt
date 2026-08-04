@@ -1,0 +1,17 @@
+{
+  "connected": {
+    "ref_images": [
+      0,
+      1
+    ],
+    "ref_videos": [
+      0
+    ],
+    "ref_video_audios": [
+      0
+    ],
+    "ref_audios": [
+      0
+    ]
+  }
+}

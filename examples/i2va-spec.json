@@ -1,0 +1,15 @@
+{
+  "mode": "i2va",
+  "profile": "direct",
+  "duration": 5,
+  "aspect_ratio": "16:9",
+  "workflow_target": "official_comfy_or_rh_compat",
+  "references": [
+    {
+      "type": "picture",
+      "index": 1,
+      "role": "first_frame"
+    }
+  ],
+  "intent": "A singer begins an emotional performance with synchronized vocal and stage ambience."
+}

@@ -1,0 +1,35 @@
+{
+  "experiment_id": "h3-v14-ref2va-profile-study",
+  "environment_id": "CHANGE_ME_ENV_001",
+  "created_at": "2026-08-04T16:32:00+08:00",
+  "model": {
+    "repository": "MiniMaxAI/MiniMax-H3",
+    "variant": "Ref2VA",
+    "weight_file": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "weight_sha256": "FILL_ME"
+  },
+  "runtime": {
+    "comfyui_commit": "FILL_ME",
+    "workflow_file": "video_minimax_h3_r2v.json",
+    "workflow_sha256": "FILL_ME",
+    "pytorch": "FILL_ME",
+    "cuda": "FILL_ME",
+    "driver": "FILL_ME"
+  },
+  "generation": {
+    "width": 1344,
+    "height": 768,
+    "frames": 124,
+    "fps": 24,
+    "sampler": "res_multistep",
+    "scheduler": "simple",
+    "steps": 20,
+    "ref_image_size": "match",
+    "require_audio": true
+  },
+  "hardware": {
+    "gpu": "FILL_ME",
+    "vram_gb": 48,
+    "ram_gb": 192
+  }
+}

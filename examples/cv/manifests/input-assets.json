@@ -1,0 +1,9 @@
+{
+  "case_id": "ref2va_motion_voice_01",
+  "assets": [
+    {"role": "ref_image_0", "file": "character.png", "sha256": "FILL_ME"},
+    {"role": "ref_video_0", "file": "motion.mp4", "sha256": "FILL_ME"},
+    {"role": "ref_video_audio_0", "file": "motion-audio.wav", "sha256": "FILL_ME"},
+    {"role": "ref_audio_0", "file": "voice.wav", "sha256": "FILL_ME"}
+  ]
+}

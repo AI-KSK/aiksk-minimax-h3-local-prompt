@@ -1,0 +1,1 @@
+Start exactly from the supplied first frame, preserving [IDENTITY, CLOTHING, COLORS, COMPOSITION, KEY OBJECTS, SPATIAL RELATIONSHIPS]. Over [DURATION] seconds, [ACTION ONSET AND CONTINUOUS DEVELOPMENT]. The camera [MOVEMENT]. Audio: [SYNCHRONIZED SOUND]. Keep motion continuous and physically plausible.

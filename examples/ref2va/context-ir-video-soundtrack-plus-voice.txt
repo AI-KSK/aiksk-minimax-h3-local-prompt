@@ -1,0 +1,27 @@
+subject_definitions:
+<Subject 1> is the female swordswoman whose facial identity, long silver hair, and white combat costume come from <Picture 1>.
+<Subject 2> is the sword-fighting choreography demonstrated in <Video 1>, including the forward sprint, leap, aerial rotation, leaf-cutting slash, and low landing stance.
+<Video 1> is the body-motion, shot-timing, and low-angle tracking-camera reference; the source performer's identity, clothing, body shape, and environment are excluded.
+<Audio 1> is the synchronized physical-sound reference paired with <Video 1>, used only for footsteps, sword whooshes, impacts, and their timing.
+<Audio 2> is the voice-timbre and restrained emotional-delivery reference for <Subject 1> (S1); its original words are not copied.
+
+summary:
+[reference generation + audio reference] The target video places <Subject 1> in a misty bamboo forest at dawn, transfers <Subject 2>'s choreography and <Video 1>'s tracking-camera timing, references <Audio 1> for synchronized physical sounds, and uses <Audio 2> as the voice reference for <Subject 1>.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - her facial identity, long silver hair, white combat costume, and sword design remain stable.
+<Subject 2> (appears in [Shot 1], [Shot 2]): attribute_transfer - the motion sequence is transferred to <Subject 1> without transferring the original performer.
+<Video 1> (motion and camera structure): reference - the target follows the sprint, leap, rotation, slash, landing, and low-angle tracking rhythm while replacing the source identity and environment.
+<Audio 1>: reference - the timing and texture of footsteps, sword whooshes, leaf cuts, and landing impact guide the target physical sounds without copying the complete source signal.
+<Audio 2>: reference - the target speaker follows its voice timbre and restrained delivery without copying its original words.
+
+detailed_description:
+The target video uses a realistic Chinese wuxia film style with pale dawn light, cool mist, restrained contrast, and fluid but physically readable movement.
+[Shot 1] A low medium-wide tracking shot opens in a dense bamboo forest. <Subject 1>, the silver-haired female swordswoman in the fitted white combat costume from <Picture 1>, leans forward into a sprint from frame left to frame right. Her face, hairline, costume structure, and narrow sword remain stable while <Subject 2>'s forward drive from <Video 1> guides her stride length, arm timing, and body lean. The camera adopts <Video 1>'s low tracking height and moves beside her at matching speed without copying the source location. Her boots strike damp soil in the timing referenced from <Audio 1>; fabric snaps, bamboo leaves shake, and a restrained sword-sheath rattle accompanies each step. She plants one foot on a fallen trunk, compresses her knees, and launches upward. The camera tilts slightly to retain her full body as mist parts below her.
+[Shot 2] At 00:02.700, the shot continues with no identity or costume change as <Subject 1> rotates once in the air according to <Subject 2>'s choreography. She draws the sword across a curtain of falling leaves; the blade path remains clean and readable, and the silver hair follows the rotation with natural inertia. A sharp whoosh and several light leaf-cut sounds follow the timing and physical texture referenced from <Audio 1>. She completes the rotation, descends behind the fallen trunk, and lands in a stable low stance without sliding. The camera follows the descent, then settles into a restrained medium close-up from a slightly low angle. <Subject 1> (S1), using the clear female timbre and restrained delivery referenced from <Audio 2>, looks toward an unseen opponent and says, <d>[Chinese] 别挡我的路。</d> Her lips close immediately after the sentence, and she remains silent while holding the sword diagonally across the frame. The final image preserves the bamboo geography, cool mist, dawn light, facial identity, costume, and sword design. The source performer's face, body shape, clothing, and original background from <Video 1> never appear.
+
+overall_soundscape:
+Cool forest ambience, distant bamboo creaks, damp footsteps, fabric movement, sword-sheath rattle, blade whooshes, cut leaves, and a compact landing impact remain synchronized to the visible action, with their timing and texture referenced from <Audio 1>.
+
+non_diegetic_music:
+A sparse low-string and xiao score enters quietly after the leap, stays below the physical sounds and dialogue, and resolves without a large swell.

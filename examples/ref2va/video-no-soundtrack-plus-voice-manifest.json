@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.4",
+  "pictures": [
+    {
+      "label": "<Picture 1>",
+      "port": "ref_images.ref_image_0",
+      "kind": "reference_image"
+    }
+  ],
+  "videos": [
+    {
+      "label": "<Video 1>",
+      "port": "ref_videos.ref_video_0",
+      "kind": "reference_video",
+      "paired_audio_label": null
+    }
+  ],
+  "audios": [
+    {
+      "label": "<Audio 1>",
+      "port": "ref_audios.ref_audio_0",
+      "kind": "standalone_audio"
+    }
+  ],
+  "ignored": [],
+  "errors": [],
+  "warnings": []
+}
