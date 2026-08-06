@@ -1,15 +1,15 @@
 ---
 name: "aiksk-minimax-h3-local-prompt"
-description: "AI-K SK 专用 MiniMax H3 开放权重本地提示词工程技能 v1.4。面向本地非 API 的 H3-Base、ComfyUI 原生节点与 RunningHub 兼容工作流，生成、改写、校验 T2VA、I2VA、L2VA、FL2VA、Ref2VA 原生音画提示词；重点支持多图、多视频、视频配套音轨、独立音频的精确标签映射、职责分配、说话者绑定与冲突诊断，并保留 v1.3 的多任务、多 Seed、盲评交叉验证原则。"
+description: "AI-K SK 专用 MiniMax H3 开放权重本地提示词工程技能 v1.5。面向本地非 API 的 H3-Base、ComfyUI 原生节点与 RunningHub 兼容工作流，生成、改写、校验 T2VA、I2VA、L2VA、FL2VA、Ref2VA 原生音画提示词；重点支持多图、多视频、视频配套音轨、独立音频的精确标签映射、职责分配、说话者绑定与冲突诊断，并保留 v1.3 的多任务、多 Seed、盲评交叉验证原则。"
 ---
 
-# AI-K SK MiniMax H3 本地提示词工程 v1.4
+# AI-K SK MiniMax H3 本地提示词工程 v1.5
 
 ## 0. 技能目标
 
 把用户的中文创意、首帧、尾帧、首尾帧或多参考素材，转换为可直接粘贴到本地 MiniMax H3 工作流的提示词。默认不调用 MiniMax API，不依赖未开放的 H3-Context-IR 服务，不把本地 H3-Base 写成完整 2K 管线。
 
-v1.4 的核心增强是 **Ref2VA 多参考输入**：在写提示词之前先读取工作流或素材清单，计算真实的 `<Picture N>`、`<Video N>`、`<Audio N>` 映射，再建立“来源—职责—目标”关系图。禁止凭节点尾号猜标签。
+v1.5 的核心增强是 **Ref2VA 多参考输入**：在写提示词之前先读取工作流或素材清单，计算真实的 `<Picture N>`、`<Video N>`、`<Audio N>` 映射，再建立“来源—职责—目标”关系图。禁止凭节点尾号猜标签。
 
 ## 1. 绝对边界
 
@@ -228,7 +228,7 @@ S1 = ...
 
 ## 12. 交叉验证边界
 
-v1.4保留v1.3原则：
+v1.5保留v1.3原则：
 
 - 同任务、同素材、同工作流、同参数、匹配 Seed；
 - Direct、Concise Structured、Context-IR 语义等价；

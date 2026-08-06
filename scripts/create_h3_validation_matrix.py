@@ -78,7 +78,7 @@ def main() -> int:
                     "cases_sha256": cases_hash,
                     "baseline_profile": baseline,
                     "hard_fail_rule": plan.get("hard_fail_rule", "majority"),
-                    "analysis_policy": plan.get("policy", "H3-CV-v1.4-clustered"),
+                    "analysis_policy": plan.get("policy", "H3-CV-v1.5-clustered"),
                     "run_id": run_id,
                     "case_id": case_id,
                     "task_type": case.get("task_type", "unknown"),

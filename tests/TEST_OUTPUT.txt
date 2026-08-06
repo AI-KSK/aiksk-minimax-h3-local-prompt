@@ -1,6 +1,6 @@
 created 6 runs: cases=1, seeds=2, profiles=['direct', 'concise_structured', 'context_ir_emulation']
 merged 2 review rows from 2 reviewers
-# MiniMax H3 v1.4 replication summary
+# MiniMax H3 v1.5 replication summary
 
 | Profile | Directions | Evidence |
 |---|---|---|

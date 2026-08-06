@@ -138,7 +138,7 @@ def main() -> int:
         "comparisons": comparisons,
         "boundary": "Single-environment results cannot exceed provisional; real H3 renders and human reviews are required.",
     }
-    lines = ["# MiniMax H3 v1.4 blind-review report", "", f"Evidence: **{evidence}**", ""]
+    lines = ["# MiniMax H3 v1.5 blind-review report", "", f"Evidence: **{evidence}**", ""]
     for profile, comp in comparisons.items():
         lines += [f"## {profile} vs {args.baseline}", "", f"Hard failures: {comp['hard_fail_counts']}", "", "| Metric | Pairs | Mean Δ | 95% CI | W/T/L |", "|---|---:|---:|---|---|"]
         for metric, x in comp["metrics"].items():

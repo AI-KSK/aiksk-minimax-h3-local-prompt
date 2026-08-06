@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared utilities for AI-K SK MiniMax H3 v1.4 validation tools."""
+"""Shared utilities for AI-K SK MiniMax H3 v1.5 validation tools."""
 from __future__ import annotations
 
 import csv

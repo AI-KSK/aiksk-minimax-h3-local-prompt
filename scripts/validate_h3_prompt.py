@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static MiniMax H3 prompt validator v1.4. Does not run the model."""
+"""Static MiniMax H3 prompt validator v1.5. Does not run the model."""
 from __future__ import annotations
 import argparse,json,re,sys
 from pathlib import Path
@@ -131,7 +131,7 @@ def validate(args,text):
     return e,w
 
 def main()->int:
-    p=argparse.ArgumentParser(description="Validate MiniMax H3 prompt v1.4")
+    p=argparse.ArgumentParser(description="Validate MiniMax H3 prompt v1.5")
     p.add_argument("prompt",type=Path);p.add_argument("--mode",required=True,choices=["t2va","i2va","l2va","fl2va","ref2va"])
     p.add_argument("--profile",required=True,choices=["direct","concise_structured","context_ir_emulation","strict_context_ir","enhanced"])
     p.add_argument("--duration",type=float);p.add_argument("--manifest",type=Path);p.add_argument("--workflow",type=Path);p.add_argument("--node-index",type=int,default=0)

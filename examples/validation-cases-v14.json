@@ -5,7 +5,7 @@
   "analysis_plan": {
     "baseline_profile": "direct",
     "hard_fail_rule": "majority",
-    "policy": "H3-CV-v1.4-clustered"
+    "policy": "H3-CV-v1.5-clustered"
   },
   "profiles": ["direct", "concise_structured", "context_ir_emulation"],
   "seeds": [1001, 1002, 1003],

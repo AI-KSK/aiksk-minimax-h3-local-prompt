@@ -1,4 +1,4 @@
-# v1.4快速卡
+# v1.5快速卡
 
 ```text
 先读工作流 → 生成Manifest → 列Picture/Video/Audio/Speaker表 → 分职责 → 写提示词 → 用Manifest校验

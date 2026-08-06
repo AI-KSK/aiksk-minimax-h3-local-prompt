@@ -1,10 +1,10 @@
-# AI-K SK MiniMax H3 本地提示词技能 v1.4
+# AI-K SK MiniMax H3 本地提示词技能 v1.5
 
 > A local, non-API prompt engineering and validation toolkit for MiniMax H3 in ComfyUI.
 
-面向 **MiniMax H3 开放权重 H3-Base、本地 ComfyUI、非 API 默认路径**。v1.4重点补齐 Ref2VA 多参考输入：工作流真实标签映射、视频配套音轨与独立音频的编号顺序、`<Audio N>`／`(Sx)`区分、来源—职责—目标关系图、冲突诊断及专项交叉验证。
+面向 **MiniMax H3 开放权重 H3-Base、本地 ComfyUI、非 API 默认路径**。v1.5重点补齐 Ref2VA 多参考输入：工作流真实标签映射、视频配套音轨与独立音频的编号顺序、`<Audio N>`／`(Sx)`区分、来源—职责—目标关系图、冲突诊断及专项交叉验证。
 
-## v1.4关键修复
+## v1.5关键修复
 
 - 新增工作流级 `Ref2VA Manifest`，不再用端口尾号猜 `<Audio N>`。
 - 精确实现 ComfyUI 官方源码顺序：视频配套音轨先登记 Audio，视频随后登记 Video；独立音频最后登记。
@@ -20,7 +20,7 @@
 解压到：
 
 ```text
-C:\Users\KSK\.codex-tokenrhythm\skills\aiksk-minimax-h3-local-prompt\
+C:\Users\KSK\.codex-bianyiwang\skills\aiksk-minimax-h3-local-prompt\
 ```
 
 ## 常用命令
@@ -47,7 +47,7 @@ python -m unittest discover -s tests -v
 
 ## v1.3能力继承
 
-v1.4保留并重新提供可执行的预注册矩阵、环境/素材/提示词哈希、匹配Case/Seed、盲评包隔离、多评审合并、硬失败分离、案例→Seed两阶段bootstrap与独立环境复现工具。单环境结果最高为`provisional`。
+v1.5保留并重新提供可执行的预注册矩阵、环境/素材/提示词哈希、匹配Case/Seed、盲评包隔离、多评审合并、硬失败分离、案例→Seed两阶段bootstrap与独立环境复现工具。单环境结果最高为`provisional`。
 
 ## 验收
 

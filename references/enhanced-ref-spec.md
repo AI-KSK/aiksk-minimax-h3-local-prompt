@@ -1,6 +1,6 @@
 # 兼容入口
 
-`enhanced`在v1.4中是`context_ir_emulation`的兼容别名。Ref2VA规范见：
+`enhanced`在v1.5中是`context_ir_emulation`的兼容别名。Ref2VA规范见：
 
 - `context-ir-ref-spec.md`
 - `ref2va-multireference-enhanced.md`

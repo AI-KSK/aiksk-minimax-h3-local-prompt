@@ -25,7 +25,7 @@ def main()->int:
     profile="context_ir_emulation" if args.profile=="enhanced" else args.profile
     m=load_json(args.manifest) if args.manifest else None
     if args.mode=="ref2va" and not m:
-        p.error("Ref2VA requires --manifest in v1.4 so labels are never guessed")
+        p.error("Ref2VA requires --manifest in v1.5 so labels are never guessed")
     if m:
         print("# MATERIAL LABEL MAP\n"+render_mapping(m)+"\n")
         if args.mapping_only:return 0

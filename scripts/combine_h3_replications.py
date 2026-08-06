@@ -53,7 +53,7 @@ def main() -> int:
         "comparisons": combined,
         "boundary": "This confirms directional replication only; it does not pool distinct environments as one random sample.",
     }
-    lines = ["# MiniMax H3 v1.4 replication summary", "", "| Profile | Directions | Evidence |", "|---|---|---|"]
+    lines = ["# MiniMax H3 v1.5 replication summary", "", "| Profile | Directions | Evidence |", "|---|---|---|"]
     for p, x in combined.items():
         lines.append(f"| {p} | {' / '.join(x['directions'])} | {x['evidence_level']} |")
     md = "\n".join(lines) + "\n"

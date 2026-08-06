@@ -75,7 +75,7 @@ class CrossValidationV14Tests(unittest.TestCase):
             "preregistered_at": "2026-08-04T16:00:00+08:00",
             "profiles": ["direct", "concise_structured", "context_ir_emulation"],
             "seeds": [101, 202],
-            "analysis_plan": {"baseline_profile": "direct", "hard_fail_rule": "majority", "policy": "H3-CV-v1.4-clustered"},
+            "analysis_plan": {"baseline_profile": "direct", "hard_fail_rule": "majority", "policy": "H3-CV-v1.5-clustered"},
             "cases": [{
                 "case_id": "ref_case_01",
                 "task_type": "ref2va",
