@@ -1,30 +1,15 @@
 # Changelog
 
-## v1.5 — 2026-08-06
+## v1.6 rebuild — 2026-08-11
 
-- 发布为 1.5 版，保留上一版的全部修复与验证内容。
-- 安装路径对齐到当前 Codex 技能目录。
-
-## v1.4 — 2026-08-04
-
-- Ref2VA 多参考输入全面增强。
-- 新增 `h3_refmap.py` 和 `build_ref2va_manifest.py`，从 ComfyUI 工作流计算真实 Picture/Video/Audio 标签。
-- 明确视频配套音轨优先占用 Audio 标签、独立音频随后编号。
-- 明确端口尾号与提示词标签号不等价。
-- 新增 `<Audio N>` 与 `(Sx)`绑定规则和校验。
-- 新增视频—配套音轨依赖、纯音频排除、合计音频上限、素材职责冲突检查。
-- 新增多参考关系图、冲突矩阵、四套音频编号案例和Context-IR完整案例。
-- 新增多参考专项回归测试和真实生成交叉验证指标。
-
-## v1.3 — 2026-08-04
-
-- 预注册、多任务、多Seed、盲评、硬失败、案例分层统计与独立环境复现。
-- Direct、Concise Structured、Context-IR三Profile公平比较。
-
-## v1.2 — 2026-08-04
-
-- 有效帧数、有效时长、字段顺序和Ref2VA关系修复。
-
-## v1.1 — 2026-08-03
-
-- 区分Direct与Context-IR模拟，增加官方原生工作流映射和静态校验。
+- Kept the original v1.6 product name and broad all-domain positioning.
+- Rebuilt the core hierarchy from scratch.
+- Preserved official MiniMax H3 base/ref prompt guides as hard grammar sources.
+- Added 50-use-case production router.
+- Added task profiles: official_full, official_compact, director, identity_lock, edit_lock, motion_reference, audio_control, creative_max.
+- Added reference conflict priority and production lock system.
+- Added prompt repair engine.
+- Added dedicated playbooks for Ref2VA, dialogue/audio, camera/action, and failure repair.
+- Removed the universal >10s dialogue hard rule; official H3 supports 4–15s output.
+- Kept H3-Context-IR clearly separate from local prompt heuristics.
+- Added cross-validation and source register.

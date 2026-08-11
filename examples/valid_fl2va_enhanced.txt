@@ -1,7 +1,0 @@
-How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 5.00-second mark of the target video.
-
-integrated_multimodal_description: [Shot 1] Live-action, clean portrait cinematography, a stable medium shot preserves the subject, clothing, background, and exact opening composition from Picture 1. The subject gradually raises both hands, rotates the wrists inward, and forms the final gesture through continuous intermediate motion. During the last second, the remaining pose, expression, and framing differences narrow until the video lands exactly on Picture 2. The camera holds a static shot. Subtle breathing and fabric movement remain synchronized.
-
-overall_soundscape: Soft indoor room tone continues under subtle breathing and light fabric movement.
-
-non_diegetic_music: N/A

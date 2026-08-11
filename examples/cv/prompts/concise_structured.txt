@@ -1,3 +1,0 @@
-[0.00s–2.50s] <Subject 1>, identified only by <Picture 1>, follows the opening sword motion and camera timing from <Video 1>; <Audio 1> supplies synchronized footsteps and sword sounds only.
-[2.50s–5.17s] The action resolves into a low stance. The voice timbre from <Audio 2> is assigned to <Subject 1> (S1), who says, <d>[Chinese] 别挡我的路。</d>
-Continuity constraints: preserve Picture 1 identity; exclude the Video 1 performer identity, clothing, body shape, and background; do not copy Audio 2 words.

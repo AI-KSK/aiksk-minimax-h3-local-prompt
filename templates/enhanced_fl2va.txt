@@ -1,7 +1,0 @@
-How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot [FINAL_SHOT]) aligns with the [DURATION_2DP]-second mark of the target video.
-
-integrated_multimodal_description: [Shot 1] [WRITE THE CONTINUOUS VISUAL-AUDIO PATH].
-
-overall_soundscape: [WRITE AMBIENCE AND PHYSICAL SOUNDS].
-
-non_diegetic_music: [WRITE AUDIENCE-ONLY SCORE OR N/A].
