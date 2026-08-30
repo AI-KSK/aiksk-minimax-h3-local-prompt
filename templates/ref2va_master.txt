@@ -1,14 +1,20 @@
 subject_definitions:
-...
+<Subject 1> is [reusable visible content], defined by [actual Picture/Video sources].
+[Use standalone <Picture N> only when the image itself is a concrete frame/composition/storyboard anchor.]
+[Use <Video N> for source/edit/continuation/whole-video structure roles.]
+[Use <Audio N> for copied or referenced audio signals.]
 
 summary:
-...
+[reference generation / keyframe completion / video editing / video continuation / audio reuse / audio reference] [short target-video and reference-role summary].
 
 retention_analysis:
-...
+[One line per tracked reference label using official relationship markers.]
 
 detailed_description:
-...
+[1–2 English style sentences before Shot 1.]
+[Shot 1] ...
+[Shot 2] At 00:XX.XXX, ...
+[Normally ~350–500 English words for generation tasks.]
 
 overall_soundscape:
 ...

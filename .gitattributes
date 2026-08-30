@@ -1,0 +1,9 @@
+# Deterministic checkout so MANIFEST.json sha256 verifies on every platform.
+# Default: normalize to LF in the repo and check out as LF everywhere.
+* text=auto eol=lf
+
+# These two official MiniMax guides ship with CRLF inside the released package,
+# and MANIFEST.json records the sha256 of those exact bytes. Store them verbatim
+# so verification does not depend on the client's core.autocrlf setting.
+references/official/base-en.txt -text
+references/official/ref-en.txt  -text

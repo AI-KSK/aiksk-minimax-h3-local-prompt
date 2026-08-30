@@ -1,62 +1,68 @@
-# Cross Validation — 2026-08-11
+# Cross Validation — 2026-08-29
 
-## Official sources checked
+This v1.7 package was validated against four independent primary documentation layers.
 
-1. MiniMax H3 official repository
-   - https://github.com/MiniMax-AI/MiniMax-H3
-2. Official base prompt guide
-   - https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md
-3. Official Ref2VA prompt guide
-   - https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md
-4. Official H3 skills directory
-   - https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills
+## Validation A — MiniMax official Base Prompt Guide
 
-## Confirmed official grammar
+Confirmed:
 
-- Five modes: T2VA, I2VA, FL2VA, L2VA, Ref2VA.
-- Base modes use keyframe instruction when applicable + three core fields.
-- Ref2VA uses six sections in fixed order.
-- Structural prose is English; dialogue/lyrics/visible text preserve original language.
-- Stable speaker IDs and `<d>[Language] ...</d>` are used for vocal content.
-- Ref2VA uses `<Subject N>`, `<Picture N>`, `<Video N>`, `<Audio N>` labels.
-- Visual retention markers: fully_preserved / partially_preserved / attribute_transfer / weak_reference.
-- Audio markers: fully_copy / partially_copy / reference / weak_reference.
+- T2VA begins directly with the three core fields.
+- I2VA uses the official first-frame instruction before the three core fields.
+- FL2VA uses the official first/last-frame alignment instruction.
+- L2VA uses the official final-frame alignment instruction.
+- Base core fields remain `integrated_multimodal_description`, `overall_soundscape`, `non_diegetic_music`.
+- `[Shot 1]` has no cut timestamp; later shots use strictly increasing timestamps.
+- Speaker IDs remain stable; dialogue uses `<d>[Language] ...</d>`.
 
-## Confirmed current H3 runtime facts
+Source: MiniMax-AI/MiniMax-H3 `skills/h3-prompt-writing/references/base-en.txt`.
 
-From the official H3 repository at validation time:
+## Validation B — MiniMax official Full-reference Prompt Guide
 
-- output duration: 4–15 seconds;
-- output frame rate: 24 FPS;
-- audio output: stereo 32 kHz;
-- shorter side is 768 px by default for base output; 2K is associated with H3-Regenerate-2K;
-- Ref2VA: up to 9 images, 3 videos, 3 audio clips; source video/audio duration and mixed-file limits follow official model specification;
-- H3-Context-IR is a hosted preprocessing/orchestration system and is not part of the open-source H3-Base release.
+Confirmed:
 
-## Official style-skill coverage checked
+- Six sections in fixed order: `subject_definitions`, `summary`, `retention_analysis`, `detailed_description`, `overall_soundscape`, `non_diegetic_music`.
+- Four reference label types: `<Subject N>`, `<Picture N>`, `<Video N>`, `<Audio N>`.
+- A Subject can be defined by multiple reference assets.
+- An image used only to define character/scene/costume/style should be cited inside a Subject rather than forced into a standalone Picture definition.
+- Standalone Picture is appropriate for first/key/last/edited frame, composition anchor, or storyboard role.
+- Official summary task types: keyframe completion, reference generation, video editing, video continuation, audio reuse, audio reference.
+- Visual retention markers: fully_preserved, partially_preserved, attribute_transfer, weak_reference.
+- Audio markers: fully_copy, partially_copy, reference, weak_reference.
+- Full-reference `detailed_description` establishes overall style in 1–2 English sentences before `[Shot 1]`.
+- Generation tasks normally target approximately 350–500 English words in `detailed_description`.
 
-The official H3 skills directory currently lists one general prompt-writing skill and eight style-specific skills, including:
+Source: MiniMax-AI/MiniMax-H3 `skills/h3-prompt-writing/references/ref-en.txt`.
 
-- 3D animation short;
-- brand promo;
-- co-op game intro;
-- hand-drawn live video;
-- minimalist product ad;
-- music-video subtitle;
-- paper collage explainer;
-- papercraft stop-motion explainer.
+## Validation C — MiniMax + ComfyUI runtime/workflow documentation
 
-AI-KSK v1.6 rebuild incorporates these categories into a broader use-case router, but its additional categories are AI-KSK production recipes, not official MiniMax skills.
+Confirmed:
 
-## What AI-KSK intentionally adds beyond official prompt writing
+- H3 supports multimodal text/image/video/audio context and native stereo audio.
+- Output duration 4–15 seconds; 24 FPS; stereo 32 kHz.
+- Ref2VA limits: images ≤9; videos ≤3, each 2–15s, total ≤15s; audio ≤3, each 2–15s, total ≤15s; mixed files ≤12.
+- ComfyUI natively supports T2V/I2V/R2V and additional first/last/reference workflows through native H3 nodes.
+- ComfyUI duration is subject to H3 frame-grid behavior; therefore prompt timestamps should follow the effective workflow duration when exact snapping matters.
 
-- intent classifier;
-- continuity locks;
-- reference conflict priority;
-- 50-use-case production router;
-- prompt profiles;
-- prompt repair engine;
-- product/identity/dialogue/action-specific recipes;
-- RunningHub/ComfyUI workflow-awareness.
+Sources: MiniMax H3 repository + ComfyUI official MiniMax H3 tutorial.
 
-These additions are production heuristics. They do not override official field names or label semantics.
+## Validation D — AIMixer Director official repository
+
+Confirmed:
+
+- Director wraps the official ComfyUI H3 image/reference conditioning + sampler pipeline.
+- Director tasks: t2v, i2v, fl2v, r2v, v2v, rv2v.
+- t2v/i2v/fl2v use fl2va; r2v/v2v/rv2v use ref2va.
+- R2V material prompts use `<Picture N>` / `<Video N>` / `<Audio N>` and support `@` picker.
+- Common prompt is concatenated with each group prompt.
+- v2v/rv2v source segment is automatically bound as `<Video 1>`.
+- Director's common prompt documentation explicitly mentions character lock / `subject_definitions`, supporting the separation between uploaded material tags and semantic Subject definitions.
+
+Source: AIMixer/ComfyUI_MiniMaxH3_Director README_EN.
+
+## Result
+
+No primary-source conflict was found that requires a Director-specific replacement grammar.
+
+Therefore v1.7 uses this hierarchy:
+
+**MiniMax official grammar → actual Director material mapping → user intent → AIKSK production heuristics.**

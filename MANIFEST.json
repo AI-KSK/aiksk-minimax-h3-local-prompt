@@ -1,0 +1,127 @@
+{
+  "name": "aiksk-minimax-h3-local-prompt",
+  "version": "1.7.0-2026.08.29",
+  "validated": "2026-08-29",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "827642f0dd476be3c9830c9699d7b9cedb39ff78c203c2cd920e2fd0d2c4770a",
+      "bytes": 796
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0e03d02446653d4b889af6806eda06c21187eb59c241498d566067dae5c80cee",
+      "bytes": 3386
+    },
+    {
+      "path": "CODEX_INSTALL.md",
+      "sha256": "e85b175c24aa1e9fbad8a641726715743e4ae19d75194cf751cf786a5016f886",
+      "bytes": 1474
+    },
+    {
+      "path": "README.md",
+      "sha256": "e485ebc1201a44f7af756630e24fb4a101bb44e9f8beaf83371daa106baa8fba",
+      "bytes": 14701
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "0b3d29c5845774c9a1d6dee03d73c1bf03aaee7453ecca7114d322eaa8f7ae88",
+      "bytes": 16737
+    },
+    {
+      "path": "examples/director_r2v_10s_three_image_story.txt",
+      "sha256": "4d8b34b4d84a6546c98faeed652ba901598f8d8c41ba4d49bcd759b796da7b05",
+      "bytes": 6240
+    },
+    {
+      "path": "references/CROSS_VALIDATION.md",
+      "sha256": "e61fa0e8fabde9c93f624753a8caa18d469dd4e4c4ec9e9d1d4c383e31a241f9",
+      "bytes": 3704
+    },
+    {
+      "path": "references/SOURCE_REGISTER.md",
+      "sha256": "59dd8056d925f0108ef75d4199e131748c273aeb7af95921af88a05e29563121",
+      "bytes": 1449
+    },
+    {
+      "path": "references/director/AIMIXER_DIRECTOR_RULES.md",
+      "sha256": "b18908099ac392bde7b905cf1a6199b16f8af7878ca4e489e2c890a0da80b8e0",
+      "bytes": 6403
+    },
+    {
+      "path": "references/director/DIRECTOR_PROMPT_LOGIC_ZH.md",
+      "sha256": "b846953e0e315362c74ea7970a12d66b5557d80d6dc2609352f06296e3d692be",
+      "bytes": 3139
+    },
+    {
+      "path": "references/official/base-en.txt",
+      "sha256": "088fb632fa3cbb18c9821024fb689e6f0f356f824c8f2e6b8e43a33239b137c7",
+      "bytes": 15995
+    },
+    {
+      "path": "references/official/ref-en.txt",
+      "sha256": "b621067b41988c4d92be715b7a98ba48338f4076ab6041d95fcf463ea7c8ccdd",
+      "bytes": 23894
+    },
+    {
+      "path": "references/playbooks/camera-action-recipes.md",
+      "sha256": "90a9044de7a16671ec034cc1b364ad726825fa0f067dae481249e0aed8aff9d5",
+      "bytes": 682
+    },
+    {
+      "path": "references/playbooks/dialogue-audio-recipes.md",
+      "sha256": "dca3dc43f296723c4bb6f4e844e7ce11ef2f47ed69f7695acfb0054d43a471c7",
+      "bytes": 836
+    },
+    {
+      "path": "references/playbooks/failure-repair-matrix.md",
+      "sha256": "d521df12e0bd5ba7e9d5ab5c1907f0fb3701486beb1dae1f432be2a279e35a77",
+      "bytes": 1076
+    },
+    {
+      "path": "references/playbooks/ref2va-reference-recipes.md",
+      "sha256": "04dfef223c85ec119794ae28502f0b6354e8ecd0118b24b47c1b6e813c8505b4",
+      "bytes": 1379
+    },
+    {
+      "path": "references/playbooks/use-case-catalog.md",
+      "sha256": "0ab9c3073ccfb8a26ce138ec8956290c033bdffceb32f5e1ed9b2998bdb5aa19",
+      "bytes": 11120
+    },
+    {
+      "path": "templates/director_r2v_master.txt",
+      "sha256": "6c9adaff2718112aa2a518e92201f9b0abb603fa6ecee6716c9dfc31a3c612d6",
+      "bytes": 1988
+    },
+    {
+      "path": "templates/fl2va_master.txt",
+      "sha256": "bef1e56f2be1090886151a8193419f0f1101681308703e3006cda3041f30e121",
+      "bytes": 314
+    },
+    {
+      "path": "templates/i2va_master.txt",
+      "sha256": "c7846aba1f657076782e9161452d58a5839efb85a0d4e73dc27488bff7e310b6",
+      "bytes": 209
+    },
+    {
+      "path": "templates/l2va_master.txt",
+      "sha256": "98c2a910189c2999153ff410aeb35fa63ff39cfe8b52089fd5f130a4c18f6c32",
+      "bytes": 240
+    },
+    {
+      "path": "templates/ref2va_master.txt",
+      "sha256": "8888aeb53cf33c7fef3a667affcce97ddeccd54216eb5a6e7c070a09b11f8200",
+      "bytes": 832
+    },
+    {
+      "path": "templates/t2va_master.txt",
+      "sha256": "c013f564945892ed899d8b1731a3a88aa591f496ce4400870682b1bff84f9e8b",
+      "bytes": 98
+    },
+    {
+      "path": "tests/test_structure.py",
+      "sha256": "5c4dd1de63c2ca3b88b2effb58d4787ba627da37c437c57012be6f540d25ca79",
+      "bytes": 3436
+    }
+  ]
+}

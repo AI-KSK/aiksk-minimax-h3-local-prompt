@@ -1,0 +1,33 @@
+# Example: 10-second three-image causal story
+# Story: pet crowned boar -> chased by boar -> ride boar away
+# Intended Director mode: r2v / ref2va
+# Note: use Director @ picker to confirm actual Picture numbering.
+
+subject_definitions:
+<Subject 1> is the same medieval young woman established across <Picture 1>, <Picture 2>, and <Picture 3>, preserving her facial identity, long dark hair, brown-and-gold dress, cream sleeves, and jewelry.
+<Subject 2> is the same giant crowned wild boar established across <Picture 1>, <Picture 2>, and <Picture 3>, preserving its curved tusks, coarse dark fur, golden crown, gold chains, and blue gemstone ornaments.
+<Picture 1> is the opening composition reference for [Shot 1], showing <Subject 1> gently touching <Subject 2> beside the castle meadow.
+<Picture 2> is the chase composition and storyboard reference for [Shot 2], showing <Subject 1> running ahead of <Subject 2> through the medieval market street.
+<Picture 3> is the climax composition reference for [Shot 3], showing <Subject 1> riding <Subject 2> across open countryside.
+
+summary:
+[reference generation] The target video tells one continuous fantasy-comedy action beat: <Subject 1> affectionately pets <Subject 2>, accidentally excites the boar and runs as it playfully charges after her, then turns the chase into a triumphant ride by grabbing its chain and mounting it. <Picture 1>, <Picture 2>, and <Picture 3> guide the opening, chase, and climax compositions.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - her identity, hairstyle, costume design, jewelry, and overall body proportions remain consistent while expression and pose evolve with the story.
+<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - its crown, tusks, fur, jewelry, scale, and recognizable fantasy identity remain consistent while behavior changes from calm to excited to cooperative.
+<Picture 1> ([Shot 1] opening composition): fully_preserved - the intimate meadow interaction and castle-side visual relationship anchor the opening.
+<Picture 2> ([Shot 2] chase composition): fully_preserved - the crowded medieval street, forward chase energy, and relative positions of woman and boar guide the middle beat.
+<Picture 3> ([Shot 3] climax composition): fully_preserved - the mounted riding pose, open-field speed, and distant castle guide the final beat.
+
+detailed_description:
+The target video is a polished cinematic medieval fantasy adventure with warm golden sunlight, rich storybook detail, lively physical comedy, and continuous forward momentum. Scene changes feel like purposeful cinematic cuts within one uninterrupted event rather than three disconnected reference-image animations.
+[Shot 1] In the sunlit meadow beneath the distant castle, <Subject 1> kneels close to <Subject 2> in the affectionate composition established by <Picture 1>. A medium-wide shot slowly pushes in with small amplitude at slow speed as she smiles, strokes the coarse fur along the boar's cheek, and gently scratches beneath its jaw. The crowned boar relaxes into the contact, breathing heavily through its nose while its gold chains shift softly against its chest. She laughs and gives its snout one playful extra pat. That small provocation becomes the trigger: <Subject 2> raises its head, ears flicking forward, releases a loud energetic snort, plants its forelegs, and suddenly leans its full body toward her. <Subject 1>'s expression snaps from amusement to surprised delight. She springs to her feet and pivots away while the boar lunges forward, ending the shot with both bodies already moving in the same screen direction.
+[Shot 2] At 00:03.300, the camera cuts into the medieval market street guided by <Picture 2>, carrying the same forward momentum across the cut. <Subject 1> is already running through the lane, laughing and gasping as her hair and skirt stream behind her. <Subject 2> charges after her with playful, overwhelming force, hooves striking the stones and kicking loose fruit and dust sideways as villagers jump clear. The camera tracks backward at medium-fast speed, keeping both subjects readable in the same moving composition. The chase is energetic rather than threatening: the boar's crown stays firmly in place and its chain harness bounces visibly with each stride. As the distance closes, <Subject 1> glances back, realizes the boar is beside her rather than attacking, and changes strategy. Still running, she rotates her shoulders toward it and reaches her right hand for the hanging gold chain. The shot ends exactly as her fingers make contact with the moving harness, creating the physical bridge into the mount.
+[Shot 3] At 00:06.900, the scene cuts to open countryside guided by <Picture 3>, but the hand contact continues seamlessly. <Subject 1> closes her grip on the chain, steps into the boar's momentum, and swings her body up onto <Subject 2>'s back in one fluid assisted movement. The camera arcs slightly around them and then tracks alongside as the crowned boar accelerates into a powerful gallop through grass and wildflowers. She leans forward with both hands on the harness, no longer fleeing, laughing with exhilaration while her hair and cream sleeves stream backward in the wind. <Subject 2> now carries her confidently like a loyal fantasy mount. The castle remains visible in the distance as warm sunlight flashes across the crown, tusks, and jewelry. The final image resolves into the joyful mounted composition of <Picture 3>, with rider and boar charging together toward the open landscape.
+
+overall_soundscape:
+Light countryside wind, birds, the boar's heavy breathing, and soft chain movement establish the opening. The chase adds rapid footsteps, heavy hoof impacts on stone, excited snorts, scattered fruit, dust, startled crowd reactions, and louder harness rattles. The final ride is dominated by powerful galloping impacts, rushing wind through hair and fabric, and rhythmic chain jingles.
+
+non_diegetic_music:
+A playful orchestral fantasy cue begins with light pizzicato strings and woodwinds, accelerates with lively percussion through the chase, and expands into bright brass and full strings for a short triumphant final swell.

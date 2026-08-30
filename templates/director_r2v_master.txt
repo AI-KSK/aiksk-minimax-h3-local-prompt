@@ -1,0 +1,27 @@
+subject_definitions:
+<Subject 1> is [same reusable person/animal/object], established by <Picture 1>[, <Picture 2> ...], preserving [identity-critical features].
+[Define additional Subjects only when they must be tracked across the target video.]
+<Picture N> is [first frame / keyframe / composition / storyboard / final frame] reference for [Shot X], defining [what the frame itself anchors].
+[Define <Video N> / <Audio N> only when present and used.]
+
+summary:
+[reference generation] The target video [one short paragraph describing the story and the actual roles of the references].
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - [identity/appearance properties retained].
+<Picture N> ([Shot X] composition anchor): fully_preserved - [what the concrete frame anchor contributes].
+[Other referenced labels, using only role-appropriate official relationship markers.]
+
+detailed_description:
+The target video is in [overall style sentence 1]. [Optional style sentence 2].
+[Shot 1] [Composition + subject position + environment + action + state change + camera + diegetic sound + references where active]. End the shot with an observable action/state that naturally carries into the next shot.
+[Shot 2] At 00:XX.XXX, [cut/transition]. Continue or complete the bridge action from Shot 1, then develop the next story beat. [Camera + sound + reference relationship].
+[Shot 3] At 00:YY.YYY, [cut/transition]. Continue the bridge action from Shot 2 and land on the intended final state.
+
+[For generation tasks, normally target ~350–500 English words in detailed_description; dialogue-dense tasks prioritize complete spoken timing.]
+
+overall_soundscape:
+[1–4 English sentences summarizing ambience, physical action sounds, and non-verbal human/creature sounds across the whole video. Do not repeat dialogue.]
+
+non_diegetic_music:
+[1–3 English sentences describing audience-only score by instrumentation, tempo/rhythm, and dynamic development; or N/A.]

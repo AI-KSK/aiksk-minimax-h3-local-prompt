@@ -1,6 +1,6 @@
-# AI-KSK H3 Use-Case Catalog
+# AIKSK H3 Use-Case Catalog
 
-This catalog is an AI-KSK production layer. It does not replace official H3 prompt grammar. Compile every selected recipe back into the official base-mode or Ref2VA output structure.
+This catalog is an AIKSK production layer. It does not replace official H3 prompt grammar. Compile every selected recipe back into the official base-mode or Ref2VA output structure.
 
 ## 1. Cinematic short film
 
