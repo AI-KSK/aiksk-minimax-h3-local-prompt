@@ -227,7 +227,7 @@ git clone https://github.com/AI-KSK/aiksk-minimax-h3-local-prompt.git "$env:USER
 python tests/test_structure.py
 ```
 
-通过应输出 `OK v1.7`。校验内容包括版本号、Base 首行原文、六段顺序、官方 task types 与 retention markers、Speaker 语法、Director 必需文件、示例的六段唯一性与时间戳。
+通过应输出 `OK v1.7`。校验内容包括版本号、Base 首行原文、六段顺序、官方 task types 与 retention markers、Speaker 语法、Response modes、Director 必需文件、示例的六段唯一性与时间戳。
 
 完整性校验可比对 [MANIFEST.json](MANIFEST.json) 中的 sha256。
 
@@ -263,18 +263,18 @@ Forbidden transfer: Video 1 的人物身份与环境
 
 整目录替换即可，没有需要迁移的配置。行为差异：
 
-- `SKILL.md` 重构为 Layer 0–14，更短但规则更硬，新增 Director 层与因果桥
+- `SKILL.md` 重构为 Layer 0–15，更短但规则更硬，新增 Director 层与因果桥
 - Ref2VA `detailed_description` 目标字数上调到官方建议的约 350–500 English words
 - H3 输入限制补全为单段时长与总时长双重约束
 - `templates/ref2va_master.txt` 从空壳段名扩写为带角色注释的骨架
-- `tests/test_structure.py` 从关键词存在性检查升级为精确规则校验，会强校验 `version: "1.7.0-2026.08.29"` 和 Director 文件存在
+- `tests/test_structure.py` 从关键词存在性检查升级为精确规则校验，会强校验 `SKILL.md` 的 `version:` 字段和 Director 文件存在
 - v1.6 散落在 `SKILL.md` 里的 50 类玩法明细，统一收在 `references/playbooks/use-case-catalog.md`
 
 ## 项目结构
 
 ```text
 aiksk-minimax-h3-local-prompt/
-├── SKILL.md                  # 主规则，Layer 0–14
+├── SKILL.md                  # 主规则，Layer 0–15
 ├── AGENTS.md                 # 给 coding agent 的操作约定
 ├── CODEX_INSTALL.md          # Codex 安装 / 上传说明
 ├── MANIFEST.json             # 文件清单与 sha256

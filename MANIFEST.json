@@ -1,6 +1,6 @@
 {
   "name": "aiksk-minimax-h3-local-prompt",
-  "version": "1.7.0-2026.08.29",
+  "version": "1.7.1-2026.08.30",
   "validated": "2026-08-29",
   "files": [
     {
@@ -10,8 +10,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0e03d02446653d4b889af6806eda06c21187eb59c241498d566067dae5c80cee",
-      "bytes": 3386
+      "sha256": "e9e439548f665868dc1f6025d1fd4d66bb124ec26a27193cc65897dabf8c2cf0",
+      "bytes": 4180
     },
     {
       "path": "CODEX_INSTALL.md",
@@ -20,13 +20,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "e485ebc1201a44f7af756630e24fb4a101bb44e9f8beaf83371daa106baa8fba",
-      "bytes": 14701
+      "sha256": "bc3fa46b656b80191f684b3b5072ec7e36f02886c5d8e041bfa32aff0e60fee8",
+      "bytes": 14720
     },
     {
       "path": "SKILL.md",
-      "sha256": "0b3d29c5845774c9a1d6dee03d73c1bf03aaee7453ecca7114d322eaa8f7ae88",
-      "bytes": 16737
+      "sha256": "3da065a2e2efe565aad72ceb92ea9e264c4d656959669da95ddfbff5e80e278e",
+      "bytes": 17440
     },
     {
       "path": "examples/director_r2v_10s_three_image_story.txt",
@@ -120,8 +120,8 @@
     },
     {
       "path": "tests/test_structure.py",
-      "sha256": "5c4dd1de63c2ca3b88b2effb58d4787ba627da37c437c57012be6f540d25ca79",
-      "bytes": 3436
+      "sha256": "c08e7325af5d6a53048cf0380d4866500681beacd6c247feefdbd5403c503ba7",
+      "bytes": 3632
     }
   ]
 }

@@ -8,7 +8,7 @@ ref = (ROOT / 'references/official/ref-en.txt').read_text(encoding='utf-8')
 director = (ROOT / 'references/director/AIMIXER_DIRECTOR_RULES.md').read_text(encoding='utf-8')
 
 # Version
-assert 'version: "1.7.0-2026.08.29"' in skill
+assert 'version: "1.7.1-2026.08.30"' in skill
 
 # Base exact fields and first-line patterns
 for item in ['integrated_multimodal_description:', 'overall_soundscape:', 'non_diegetic_music:']:
@@ -47,6 +47,11 @@ for item in ['Causal bridges','causal bridges','350–500 English words','[Shot 
 # Speaker syntax
 assert '(S1)' in skill
 assert '<d>[Language]' in skill
+
+# Response-mode routing (restored in 1.7.1)
+assert 'Layer 14 — Response modes' in skill
+for item in ['official_full', 'official_compact', 'Validation / risks:']:
+    assert item in skill, item
 
 # Required files
 required_paths = [

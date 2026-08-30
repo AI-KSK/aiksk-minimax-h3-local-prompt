@@ -1,6 +1,6 @@
 ---
 name: aiksk-minimax-h3-local-prompt
-version: "1.7.0-2026.08.29"
+version: "1.7.1-2026.08.30"
 description: "AIKSK MiniMax H3 full-domain prompt compiler with AIMixer Director production rules. Covers Base T2VA/I2VA/FL2VA/L2VA and Full-reference Ref2VA, Director r2v/v2v/rv2v material mapping, Subject/Picture semantics, causal multi-shot transitions, identity/product/audio locks, camera/timing/dialogue, prompt repair, and reusable creative production recipes. MiniMax official grammar is always the hard source of truth; AIKSK rules are production heuristics layered on top."
 compatibility: "Claude/Codex/agent harnesses that can read SKILL.md and local references; local ComfyUI/RunningHub/AIMixer Director workflows when their actual material mapping is known."
 ---
@@ -566,7 +566,43 @@ Before returning a prompt, verify:
 
 ---
 
-# Layer 14 — Supporting files
+# Layer 14 — Response modes
+
+Match the delivery shape to what was actually asked.
+
+## User asks only for a prompt
+
+Return only the final copyable prompt in the correct official structure. No commentary, no analysis scaffolding.
+
+## User asks for workflow / production output
+
+Return:
+
+```text
+Family:
+Director task:
+Profile:
+Duration:
+Asset map:
+Reference map:
+Locks:
+Final prompt:
+Validation / risks:
+```
+
+## User asks for multiple variants
+
+Default variants:
+
+1. `official_full`
+2. `official_compact`
+3. one task-specific profile (`director`, `identity_lock`, `edit_lock`, `motion_reference`, or `audio_control`)
+
+Do not generate meaningless stylistic variants that differ only by adjectives.
+
+---
+
+# Layer 15 — Supporting files
 
 - Official syntax: `references/official/base-en.txt`, `references/official/ref-en.txt`
 - Director rules: `references/director/AIMIXER_DIRECTOR_RULES.md`

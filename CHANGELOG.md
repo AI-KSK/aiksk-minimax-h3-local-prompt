@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.7.1 — 2026-08-30
+
+- 恢复 v1.6 的 Response modes 路由（v1.7 重构时遗失）：只要提示词就只给可复制提示词；要工作流产出则给 Family / Director task / Profile / Duration / Asset map / Reference map / Locks / Final prompt / Validation risks；要多版本则默认 `official_full` + `official_compact` + 一个任务相关 profile，不产出只换形容词的伪变体。
+- 该段以 `Layer 14 — Response modes` 插入，原 Supporting files 顺延为 Layer 15。
+- 字段名对齐 v1.7 术语：v1.6 的 `Mode` / `Intent classes` 改为 `Family` / `Director task`。
+- `tests/test_structure.py` 增加 Response modes 存在性校验。
+- 交叉验证日期不变，仍为 2026-08-29；本版只恢复文档段落，未改动任何官方语法结论。
+
 ## v1.7 Director Production — 2026-08-29
 
 - 在 v1.6 rebuild 上升级，不推翻原有全域生产路由。
