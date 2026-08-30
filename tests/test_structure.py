@@ -8,7 +8,7 @@ ref = (ROOT / 'references/official/ref-en.txt').read_text(encoding='utf-8')
 director = (ROOT / 'references/director/AIMIXER_DIRECTOR_RULES.md').read_text(encoding='utf-8')
 
 # Version
-assert 'version: "1.7.1-2026.08.30"' in skill
+assert 'version: "1.7.2-2026.08.30"' in skill
 
 # Base exact fields and first-line patterns
 for item in ['integrated_multimodal_description:', 'overall_soundscape:', 'non_diegetic_music:']:
@@ -52,6 +52,28 @@ assert '<d>[Language]' in skill
 assert 'Layer 14 — Response modes' in skill
 for item in ['official_full', 'official_compact', 'Validation / risks:']:
     assert item in skill, item
+
+# Evidence boundaries and trigger phrases (restored in 1.7.2)
+assert 'Layer 15 — Evidence boundaries' in skill
+assert 'Layer 17 — Trigger phrases' in skill
+# All five evidence tiers must be present, in order.
+tiers = [
+    'MiniMax official — grammar and runtime',
+    'ComfyUI official — node behavior',
+    'AIMixer Director official — mapping only',
+    'AIKSK production heuristics',
+    'Never claim',
+]
+tier_pos = [skill.index(t) for t in tiers]
+assert tier_pos == sorted(tier_pos), tier_pos
+# The Director tier must not be described as MiniMax official.
+assert 'State these as Director behavior, never as MiniMax grammar.' in skill
+for item in ['H3-Context-IR', 'H3-Regenerate-2K']:
+    assert item in skill, item
+
+# Layer numbering must be unique and gapless from 0.
+layers = [int(n) for n in re.findall(r'^# Layer (\d+)', skill, re.M)]
+assert layers == list(range(len(layers))), layers
 
 # Required files
 required_paths = [

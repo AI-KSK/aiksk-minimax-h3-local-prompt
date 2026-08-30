@@ -1,6 +1,6 @@
 ---
 name: aiksk-minimax-h3-local-prompt
-version: "1.7.1-2026.08.30"
+version: "1.7.2-2026.08.30"
 description: "AIKSK MiniMax H3 full-domain prompt compiler with AIMixer Director production rules. Covers Base T2VA/I2VA/FL2VA/L2VA and Full-reference Ref2VA, Director r2v/v2v/rv2v material mapping, Subject/Picture semantics, causal multi-shot transitions, identity/product/audio locks, camera/timing/dialogue, prompt repair, and reusable creative production recipes. MiniMax official grammar is always the hard source of truth; AIKSK rules are production heuristics layered on top."
 compatibility: "Claude/Codex/agent harnesses that can read SKILL.md and local references; local ComfyUI/RunningHub/AIMixer Director workflows when their actual material mapping is known."
 ---
@@ -562,7 +562,8 @@ Before returning a prompt, verify:
 14. soundscape does not duplicate dialogue;
 15. audience-only score is separated from diegetic sound;
 16. Ref2VA generation detail is sufficiently explicit, normally around 350–500 English words;
-17. no AIKSK heuristic is falsely labeled official.
+17. every claim respects the Layer 15 evidence tiers — no AIKSK heuristic and
+    no Director behavior is labeled as MiniMax official.
 
 ---
 
@@ -602,7 +603,76 @@ Do not generate meaningless stylistic variants that differ only by adjectives.
 
 ---
 
-# Layer 15 — Supporting files
+# Layer 15 — Evidence boundaries
+
+Every claim in a reply must be traceable to one of these tiers. When tiers
+disagree, the earlier tier wins. Never promote a lower tier to a higher one.
+
+## 15.1 MiniMax official — grammar and runtime
+
+May be stated as official when the bundled guides support them:
+
+- the Base and Full-reference prompt-mode structures;
+- Base three core fields, and their order;
+- Ref2VA six-section order;
+- the four reference label types and their semantics;
+- official `summary` task types;
+- official visual and audio retention markers;
+- speaker IDs and `<d>[Language] ...</d>` dialogue formatting;
+- shot/cut notation and timestamp rules;
+- camera-motion guidance;
+- that an identity/costume/style-only image belongs inside a Subject, and that
+  a standalone Picture is for frame, composition-anchor or storyboard roles;
+- H3 runtime specs: 4–15s output, 24 FPS, stereo 32 kHz, and the Ref2VA input
+  limits recorded in the source register.
+
+## 15.2 ComfyUI official — node behavior
+
+- native H3 node families and the workflows they support;
+- frame-grid behavior, which is why prompt timestamps follow the effective
+  workflow duration rather than the requested duration.
+
+## 15.3 AIMixer Director official — mapping only
+
+Official **to the Director project**, not to MiniMax:
+
+- the six Director tasks;
+- `t2v`/`i2v`/`fl2v` → `fl2va`, `r2v`/`v2v`/`rv2v` → `ref2va`;
+- R2V material tags and the `@` picker;
+- common-prompt concatenation onto each group prompt;
+- automatic `<Video 1>` binding of the v2v/rv2v source segment.
+
+State these as Director behavior, never as MiniMax grammar. They describe one
+custom node set and can change with its version, so defer to the actual
+installed workflow whenever it is visible.
+
+## 15.4 AIKSK production heuristics
+
+Usable, but must be labeled internally as heuristics:
+
+- causal bridges across cuts;
+- output profiles;
+- the lock hierarchy;
+- the operational Subject-vs-Picture decision procedure built on top of 15.1;
+- multi-reference conflict priority;
+- story/use-case routers and playbooks;
+- failure-repair recipes;
+- dialogue-density splitting;
+- response-mode shaping in Layer 14.
+
+## 15.5 Never claim
+
+- that this skill reproduces official H3-Context-IR exactly;
+- that local prompt rewriting equals H3-Regenerate-2K;
+- that an AIKSK heuristic or a Director behavior is a MiniMax official
+  requirement;
+- that a community LoRA or third-party custom node is an official MiniMax
+  feature;
+- that unseen source media contains any specific detail.
+
+---
+
+# Layer 16 — Supporting files
 
 - Official syntax: `references/official/base-en.txt`, `references/official/ref-en.txt`
 - Director rules: `references/director/AIMIXER_DIRECTOR_RULES.md`
@@ -615,3 +685,21 @@ Do not generate meaningless stylistic variants that differ only by adjectives.
 - Director R2V template: `templates/director_r2v_master.txt`
 - 10-second three-image example: `examples/director_r2v_10s_three_image_story.txt`
 - Source validation: `references/CROSS_VALIDATION.md`, `references/SOURCE_REGISTER.md`
+
+---
+
+# Layer 17 — Trigger phrases
+
+Use this skill when the request mentions or implies:
+
+- MiniMax H3 prompt / 提示词 / Prompt;
+- T2VA / I2VA / FL2VA / L2VA / Ref2VA;
+- Director / 导演台 / AIMixer / ComfyUI_MiniMaxH3_Director;
+- `t2v` / `i2v` / `fl2v` / `r2v` / `v2v` / `rv2v` / 分组 / 公共提示词;
+- 文生视频 / 图生视频 / 首尾帧 / 尾帧 / 参考生视频;
+- 参考图 / 参考视频 / 参考音频 / 声音参考 / 素材编号 / Subject 定义;
+- 视频编辑 / 续写 / 人物一致性 / 动作参考;
+- 镜头设计 / 运镜 / 分镜 / 转场 / 因果衔接 / 音效 / 对白 / 歌词 / MV;
+- 产品广告 / 品牌片 / 3D 动画 / 游戏开场 / 纸艺 / 拼贴;
+- AI 短剧 / 数字人 / 双人对话 / 打斗 / 变身 / 舞蹈;
+- H3 Prompt 修复 / 重写 / 压缩 / 扩写 / 诊断 / 幻灯片感。

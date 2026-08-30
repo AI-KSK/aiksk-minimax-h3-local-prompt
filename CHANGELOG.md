@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.7.2 — 2026-08-30
+
+- 恢复 v1.6 的 Evidence boundaries（证据边界），并按 v1.7 实际来源结构重写为五档：MiniMax 官方语法与运行时 / ComfyUI 官方节点行为 / AIMixer Director 官方映射 / AIKSK 生产经验 / 绝不可声称。以 `Layer 15 — Evidence boundaries` 插入。
+- v1.6 原文只分三档（官方 / AIKSK 经验 / 不可声称），无法容纳 v1.7 新增的导演台事实。新增第三档专门约束：导演台的六个 task、模型族路由、素材标签、公共提示词拼接、`<Video 1>` 绑定，是「Director 项目的官方行为」，不是 MiniMax 语法，且随该自定义节点版本变化，可见实际工作流时以实际为准。
+- v1.6 写的「five prompt modes」按 v1.7 的两大家族结构改写。
+- 官方档补入 v1.7 新增的已验证事实：Subject 收纳身份/服装/风格图、独立 Picture 仅用于帧与构图锚点（此二者属官方指南明文）。AIKSK 档保留在其上构建的操作性决策流程。
+- 恢复 v1.6 的 Trigger phrases，以 `Layer 17 — Trigger phrases` 插入，并补入导演台相关触发词：Director / 导演台 / AIMixer / 六个 task / 分组 / 公共提示词 / 素材编号 / Subject 定义 / 因果衔接 / 幻灯片感。
+- 原 Supporting files 顺延为 Layer 16。现为 Layer 0–17。
+- QA checklist 第 17 条扩写：不仅 AIKSK 经验不得标为官方，导演台行为同样不得标为 MiniMax 官方。
+- `tests/test_structure.py` 增加校验：五档证据边界须按序存在、导演台免责句须在、`H3-Context-IR` / `H3-Regenerate-2K` 两条禁止声称须在，并新增 Layer 编号唯一且从 0 连续的断言（可捕获插层时的编号断裂）。
+- 交叉验证日期不变，仍为 2026-08-29；本版只恢复与重构文档段落，未改动任何官方语法结论。
+
 ## v1.7.1 — 2026-08-30
 
 - 恢复 v1.6 的 Response modes 路由（v1.7 重构时遗失）：只要提示词就只给可复制提示词；要工作流产出则给 Family / Director task / Profile / Duration / Asset map / Reference map / Locks / Final prompt / Validation risks；要多版本则默认 `official_full` + `official_compact` + 一个任务相关 profile，不产出只换形容词的伪变体。

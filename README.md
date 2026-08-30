@@ -227,7 +227,7 @@ git clone https://github.com/AI-KSK/aiksk-minimax-h3-local-prompt.git "$env:USER
 python tests/test_structure.py
 ```
 
-通过应输出 `OK v1.7`。校验内容包括版本号、Base 首行原文、六段顺序、官方 task types 与 retention markers、Speaker 语法、Response modes、Director 必需文件、示例的六段唯一性与时间戳。
+通过应输出 `OK v1.7`。校验内容包括版本号、Base 首行原文、六段顺序、官方 task types 与 retention markers、Speaker 语法、Response modes、五档证据边界的顺序与免责句、Layer 编号连续性、Director 必需文件、示例的六段唯一性与时间戳。
 
 完整性校验可比对 [MANIFEST.json](MANIFEST.json) 中的 sha256。
 
@@ -263,7 +263,7 @@ Forbidden transfer: Video 1 的人物身份与环境
 
 整目录替换即可，没有需要迁移的配置。行为差异：
 
-- `SKILL.md` 重构为 Layer 0–15，更短但规则更硬，新增 Director 层与因果桥
+- `SKILL.md` 重构为 Layer 0–17，更短但规则更硬，新增 Director 层与因果桥
 - Ref2VA `detailed_description` 目标字数上调到官方建议的约 350–500 English words
 - H3 输入限制补全为单段时长与总时长双重约束
 - `templates/ref2va_master.txt` 从空壳段名扩写为带角色注释的骨架
@@ -274,7 +274,7 @@ Forbidden transfer: Video 1 的人物身份与环境
 
 ```text
 aiksk-minimax-h3-local-prompt/
-├── SKILL.md                  # 主规则，Layer 0–15
+├── SKILL.md                  # 主规则，Layer 0–17
 ├── AGENTS.md                 # 给 coding agent 的操作约定
 ├── CODEX_INSTALL.md          # Codex 安装 / 上传说明
 ├── MANIFEST.json             # 文件清单与 sha256
@@ -320,6 +320,20 @@ AI-KSK Enhancement
 ```
 
 如果 AI-KSK 扩展规则与 MiniMax 官方 H3 Prompt Grammar 冲突，始终以官方规则为准。AI-KSK 的生产经验不会被描述成 MiniMax 官方要求。
+
+### 证据边界
+
+`SKILL.md` Layer 15 把每条结论按来源分五档，越靠前越硬，冲突时前者胜：
+
+| 档 | 来源 | 可以怎么说 |
+|---|---|---|
+| 1 | MiniMax 官方指南 | 语法、字段名、标签语义、retention markers、对白格式、运行时限制，可直接称官方 |
+| 2 | ComfyUI 官方文档 | 原生节点行为、frame-grid（时间戳要跟随实际有效时长） |
+| 3 | AIMixer Director 官方 README | 六个 task、模型族路由、素材标签、公共提示词拼接、`<Video 1>` 绑定 |
+| 4 | AI-KSK 生产经验 | 因果桥、Profile、锁层级、冲突优先级、修复配方、回复形态 |
+| 5 | 绝不可声称 | 复刻 H3-Context-IR、等价 H3-Regenerate-2K、把三/四档说成 MiniMax 官方、把社区节点说成官方功能 |
+
+第 3 档是 **Director 项目的官方行为，不是 MiniMax 语法**，并且会随该自定义节点版本变化。能看到实际工作流时，以实际工作流为准。
 
 ## 交叉验证
 
