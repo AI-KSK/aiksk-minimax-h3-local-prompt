@@ -1,0 +1,19 @@
+subject_definitions:
+<Subject 1> is Fighter A, preserving appearance, outfit and proportions exactly as shown in <Picture 1>; referenced by <Picture 1>.
+<Subject 2> is Fighter B, preserving appearance, outfit and proportions exactly as shown in <Picture 2>; referenced by <Picture 2>.
+
+summary:
+[reference generation] A single continuous cinematic action exchange between <Subject 1> and <Subject 2>, retaining their separate reference identities; the images are identity references, not two sequential shots.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - identity, facial structure, hairstyle, outfit and proportions as shown in <Picture 1>.
+<Subject 2> (appears in [Shot 1]): fully_preserved - identity, facial structure, hairstyle, outfit and proportions as shown in <Picture 2>.
+
+detailed_description:
+[Shot 1] BUNNY. Two adult wuxia duelists cross matching but distinct practice swords in a sunlit stone courtyard; each has exactly one sword and keeps the same owner and grip. <Subject 1> starts on screen left and <Subject 2> starts on screen right, using exactly the faces, clothing, accessories and body shapes in their input images. Medium-wide full-body framing, one stable camera axis and minimal side tracking. At 0.0-1.0 s, A stands on screen left holding one steel practice sword in the right hand and B faces A on screen right holding one sword in the right hand. At 1.0-2.2 s, A draws one clear horizontal arc; B meets the flat of A's blade with a controlled parry. At 2.2-3.65 s, their blades slide apart; B rotates the wrist and makes one reply cut while A steps diagonally aside. At 3.65-5.17 s, both lower their blades into visible guard positions, with each weapon still in its original owner's hand; no duplicated blades. Track each move as <Subject 1> versus <Subject 2> without replacing their faces, duplicate weapons or swapping clothing. No new speakers or characters.
+
+overall_soundscape:
+A clean metallic sword contact exactly at the parry, footsteps and cloth movement, followed by separated steel resonance and a final steady room ambience. No dialogue or invented audio references.
+
+non_diegetic_music:
+N/A

@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.1",
+  "purpose": "Single-pass H3 JOKER141 A0–A8, BASE control, prompt mapping and trigger knowledge (not official MiniMax grammar)",
+  "basis": "AIKSK local workflow experiment defaults; none asserted universally optimal",
+  "input_type": "ComfyUI LoraLoaderModelOnly.strength_model",
+  "lora_order": [
+    "Combat V2",
+    "Weapon Combat V1",
+    "GunFu",
+    "Motion Repair V2",
+    "Fight Flow V1"
+  ],
+  "lora_files": {
+    "Combat V2": "H3_Combat_V2.safetensors",
+    "Weapon Combat V1": "Bunny_weapon_combatV1.safetensors",
+    "GunFu": "GunFu.safetensors",
+    "Motion Repair V2": "Motion_Repair_V2.safetensors",
+    "Fight Flow V1": "H3_Fight_Flow_V1.safetensors"
+  },
+  "presets": [
+    {
+      "id": "A0",
+      "name": "基础拳脚",
+      "style": "unarmed",
+      "weights": {
+        "Combat V2": 0.65,
+        "Weapon Combat V1": 0,
+        "GunFu": 0,
+        "Motion Repair V2": 0,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "实验起点，非作者统一最优",
+      "prompt_strategy": {
+        "scene": "unarmed",
+        "intent": "无触发词的基础拳脚；建立接触、重心与收势",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A1",
+      "name": "高动态修复",
+      "style": "unarmed",
+      "weights": {
+        "Combat V2": 1,
+        "Weapon Combat V1": 0,
+        "GunFu": 0,
+        "Motion Repair V2": 0.5,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "实验组合，注意复核运动稳定性",
+      "prompt_strategy": {
+        "scene": "unarmed",
+        "intent": "拳脚攻防加动作连续性；主打有效格挡与反击",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A2",
+      "name": "双人攻防",
+      "style": "unarmed",
+      "weights": {
+        "Combat V2": 0.65,
+        "Weapon Combat V1": 0,
+        "GunFu": 0,
+        "Motion Repair V2": 0,
+        "Fight Flow V1": 0.65
+      },
+      "evidence_status": "实验组合，Fight Flow 作者单采0.65可借鉴",
+      "prompt_strategy": {
+        "scene": "unarmed",
+        "intent": "两人互动回合；由上一招的身体状态推导下一招",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A3",
+      "name": "综合武打",
+      "style": "unarmed",
+      "weights": {
+        "Combat V2": 0.7,
+        "Weapon Combat V1": 0,
+        "GunFu": 0,
+        "Motion Repair V2": 0.5,
+        "Fight Flow V1": 0.65
+      },
+      "evidence_status": "实验组合，三个强动态 LoRA 联用未得到系统性验证",
+      "prompt_strategy": {
+        "scene": "unarmed",
+        "intent": "综合高动态；少招式，重点动作接触、退让与恢复",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A4",
+      "name": "刀剑兵器",
+      "style": "weapon",
+      "weights": {
+        "Combat V2": 0,
+        "Weapon Combat V1": 0.45,
+        "GunFu": 0,
+        "Motion Repair V2": 0,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "Weapon 独立起点，0.45见作者社区展示，非统一推荐",
+      "prompt_strategy": {
+        "scene": "weapon",
+        "intent": "两人持刀剑交锋；必须写明武器主人、左右手与刀剑去向",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A5",
+      "name": "枪斗",
+      "style": "gunfu",
+      "weights": {
+        "Combat V2": 0,
+        "Weapon Combat V1": 0,
+        "GunFu": 0.9,
+        "Motion Repair V2": 0,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "GunFu 单独0.9来源作者推荐",
+      "prompt_strategy": {
+        "scene": "gunfu",
+        "intent": "枪斗影视动作；固定枪械归属、镜头与身体位置，不写现实战术教程",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A6",
+      "name": "连续枪战",
+      "style": "gunfu",
+      "weights": {
+        "Combat V2": 0,
+        "Weapon Combat V1": 0,
+        "GunFu": 0.9,
+        "Motion Repair V2": 0.5,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "GunFu+Motion 0.9+0.5来源作者第一阶段推荐",
+      "prompt_strategy": {
+        "scene": "gunfu",
+        "intent": "远程枪战与动态衔接；强调连贯撤步、掩护场景与反应",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A7",
+      "name": "近身枪斗",
+      "style": "gunfu",
+      "weights": {
+        "Combat V2": 0.5,
+        "Weapon Combat V1": 0,
+        "GunFu": 0.9,
+        "Motion Repair V2": 0.3,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "GunFu+Combat+Motion 0.9+0.5+0.3来源作者第一阶段推荐",
+      "prompt_strategy": {
+        "scene": "gunfu",
+        "intent": "影视近身枪斗，包含视觉可读的动作与受击反应",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    },
+    {
+      "id": "A8",
+      "name": "通用动作修复",
+      "style": "motion",
+      "weights": {
+        "Combat V2": 0,
+        "Weapon Combat V1": 0,
+        "GunFu": 0,
+        "Motion Repair V2": 0.9,
+        "Fight Flow V1": 0
+      },
+      "evidence_status": "Motion 0.9是作者单独建议，V2作为测试版本",
+      "prompt_strategy": {
+        "scene": "motion",
+        "intent": "通用动作连续性：跑酷、跳跃、旋转、支撑与落地",
+        "reference_policy": "人物身份/着装按实际输入素材，不以示例故事覆盖",
+        "trigger_policy": "derived from model_cards and nonzero LoRA weights"
+      }
+    }
+  ],
+  "runtime": {
+    "pass_count": 1,
+    "base_modes": {
+      "T2VA": {
+        "turbo_steps": 8,
+        "predictor": "T2VA"
+      },
+      "R2VA": {
+        "turbo_steps": 4,
+        "predictor": "R2VA",
+        "risk": "Veda Predictor main training context uses 8-step; R2VA with 4-step Turbo requires actual quality/speed verification."
+      }
+    },
+    "veda": "separate predictor for each task; not a LoRA",
+    "notes": "Veda predictor has principal training conditions around 8-step Turbo; 4-step R2VA is a separate compatibility experiment, not certified optimal."
+  },
+  "notes": [
+    "Do not mix Weapon preset A4 by default with other strong motion LoRAs.",
+    "Prompt scenario must match the selected preset; weights alone do not rewrite a fight scene.",
+    "These values are starting configurations, not results from an RTX 4090 run.",
+    "BASE is experimental control independent of the nine A0–A8 presets; it disables only JOKER141 motion LoRAs, not Turbo or Veda.",
+    "Preset switch in ComfyUI does NOT automatically alter the text prompt. Use sync_fight_workflow.py to export an aligned JSON, or edit the prompt to match the recipe.",
+    "Trigger words are model-card conventions, not mandatory official H3 prompt fields; omit inactive LoRA triggers."
+  ],
+  "source_evidence": "A0–A8 are local experimental recipes; only source-specific numbers are individually attributed in model card. Composite weights not automatically author-validated.",
+  "baseline": {
+    "id": "BASE",
+    "name": "五项专项 LoRA 全零的无专项 LoRA 基线",
+    "weights": {
+      "Combat V2": 0,
+      "Weapon Combat V1": 0,
+      "GunFu": 0,
+      "Motion Repair V2": 0,
+      "Fight Flow V1": 0
+    },
+    "turbo": "kept_on",
+    "veda": "kept_on",
+    "experiment_only": true,
+    "workflow_switch_method": "manual_override=true and all five manual weights=0; or use scripts/sync_fight_workflow.py --preset BASE"
+  },
+  "model_cards": {
+    "Combat V2": {
+      "source": "https://huggingface.co/JOKER141/MiniMax-H3-Combat-Base-V2",
+      "trigger_policy": "optional_intensity",
+      "default_trigger": "",
+      "variants": {
+        "intense": [
+          "prfight2"
+        ],
+        "finisher": [
+          "prfight2",
+          "prfin1"
+        ]
+      },
+      "notes": "Default no trigger for anatomy; prefer action completed before dialogue."
+    },
+    "Weapon Combat V1": {
+      "source": "https://huggingface.co/JOKER141/MiniMax-H3-Weapon-Combat-LoRA",
+      "trigger_policy": "recommended",
+      "default_trigger": "BUNNY",
+      "notes": "Standalone recommended; combination with strong motion LoRAs may clash."
+    },
+    "GunFu": {
+      "source": "https://huggingface.co/JOKER141/MiniMaxH3-GunFu-Gunfight-LORA",
+      "trigger_policy": "recommended",
+      "default_trigger": "BUNNY",
+      "notes": "Cinematic action depiction only; first-pass 0.9 baseline."
+    },
+    "Motion Repair V2": {
+      "source": "https://huggingface.co/JOKER141/MiniMax-H3-General-Motion-Continuity-Repair",
+      "trigger_policy": "optional",
+      "default_trigger": "",
+      "optional_trigger": "bunny_crisp_motion"
+    },
+    "Fight Flow V1": {
+      "source": "https://huggingface.co/JOKER141/H3-Fight-Flow-Fight-Interaction-LoRA",
+      "trigger_policy": "scene_conditional",
+      "trigger_by_scene": {
+        "unarmed": "Unarmed combat interaction",
+        "weapon": "Melee weapon interaction",
+        "gunfu": "Gun-fu interaction",
+        "motion": "Unarmed combat interaction"
+      },
+      "notes": "Only emit if Fight Flow > 0. Select by dominant interaction not props."
+    }
+  }
+}

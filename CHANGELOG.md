@@ -1,24 +1,24 @@
+# v1.8.1 (2026-10-13) — Martial corrective update
+
+- Retain 25 original v1.7 files; never rewrite official MiniMax reference content.
+- Nine A0–A8 recipes preserved, separate BASE baseline added without renumbering.
+- Trigger policy from JOKER141 author cards; default Combat untriggered, others conditional/optional as specified.
+- Offline exported JSON automatically synchronizes scene prompt, task mode and preset; it does **not** add a live ComfyUI prompt binding.
+- Source register and cross-validation refreshed; Veda R2VA 4-step caveat captured.
+- New smoke tests for scene routing A4/A7, BASE, REF labels, JSON link validity and unchanged official source hashes.
+
 # Changelog
 
-## v1.7.2 — 2026-08-30
+## v1.8 Martial Arts Production — 2026-10-13
 
-- 恢复 v1.6 的 Evidence boundaries（证据边界），并按 v1.7 实际来源结构重写为五档：MiniMax 官方语法与运行时 / ComfyUI 官方节点行为 / AIMixer Director 官方映射 / AIKSK 生产经验 / 绝不可声称。以 `Layer 15 — Evidence boundaries` 插入。
-- v1.6 原文只分三档（官方 / AIKSK 经验 / 不可声称），无法容纳 v1.7 新增的导演台事实。新增第三档专门约束：导演台的六个 task、模型族路由、素材标签、公共提示词拼接、`<Video 1>` 绑定，是「Director 项目的官方行为」，不是 MiniMax 语法，且随该自定义节点版本变化，可见实际工作流时以实际为准。
-- v1.6 写的「five prompt modes」按 v1.7 的两大家族结构改写。
-- 官方档补入 v1.7 新增的已验证事实：Subject 收纳身份/服装/风格图、独立 Picture 仅用于帧与构图锚点（此二者属官方指南明文）。AIKSK 档保留在其上构建的操作性决策流程。
-- 恢复 v1.6 的 Trigger phrases，以 `Layer 17 — Trigger phrases` 插入，并补入导演台相关触发词：Director / 导演台 / AIMixer / 六个 task / 分组 / 公共提示词 / 素材编号 / Subject 定义 / 因果衔接 / 幻灯片感。
-- 原 Supporting files 顺延为 Layer 16。现为 Layer 0–17。
-- QA checklist 第 17 条扩写：不仅 AIKSK 经验不得标为官方，导演台行为同样不得标为 MiniMax 官方。
-- `tests/test_structure.py` 增加校验：五档证据边界须按序存在、导演台免责句须在、`H3-Context-IR` / `H3-Regenerate-2K` 两条禁止声称须在，并新增 Layer 编号唯一且从 0 连续的断言（可捕获插层时的编号断裂）。
-- 交叉验证日期不变，仍为 2026-08-29；本版只恢复与重构文档段落，未改动任何官方语法结论。
+- 保留 v1.7 Director、官方语法引用和原有案例，不覆盖现有能力。
+- 新增武打专项 `references/playbooks/fight-choreography.md`：徒手、双人攻防、兵器、GunFu、通用动作修复路由；状态账本、接触几何、5/10/15 秒动作节拍、屏幕轴线、音效和修复策略。
+- 新增 `references/playbooks/fight-lora-presets.json`，收录 JOKER141 五类 LoRA 的 A0–A8 起始权重与准确文件名；明确只是 ComfyUI 实验配置，不是官方语法/已验证最优。
+- 新增 2 个武打模板、2 个 Base/Ref2VA 完整武打示例。
+- 更新 SKILL 路由、AGENTS、用途目录、镜头动作规约、错误修复矩阵与 Codex 安装说明。
+- 增强 tests/test_structure.py；新增官方原始指南 SHA256 不变的回归校验，更新 MANIFEST 全量哈希。
+- 延续“单阶段 T2VA/R2VA + Turbo + Veda”的现有编排观念，但本次不修改任何 ComfyUI JSON，也不声称已完成显卡实测。
 
-## v1.7.1 — 2026-08-30
-
-- 恢复 v1.6 的 Response modes 路由（v1.7 重构时遗失）：只要提示词就只给可复制提示词；要工作流产出则给 Family / Director task / Profile / Duration / Asset map / Reference map / Locks / Final prompt / Validation risks；要多版本则默认 `official_full` + `official_compact` + 一个任务相关 profile，不产出只换形容词的伪变体。
-- 该段以 `Layer 14 — Response modes` 插入，原 Supporting files 顺延为 Layer 15。
-- 字段名对齐 v1.7 术语：v1.6 的 `Mode` / `Intent classes` 改为 `Family` / `Director task`。
-- `tests/test_structure.py` 增加 Response modes 存在性校验。
-- 交叉验证日期不变，仍为 2026-08-29；本版只恢复文档段落，未改动任何官方语法结论。
 
 ## v1.7 Director Production — 2026-08-29
 
@@ -35,24 +35,12 @@
 - 更新 H3 输入限制：Images ≤9；Videos ≤3 且单段 2–15s、总时长 ≤15s；Audio ≤3 且单段 2–15s、总时长 ≤15s；mixed files ≤12。
 - 新增 Director common prompt 安全策略：默认每组完整六段式；advanced 模式只把共享 `subject_definitions` 前缀放 common，避免重复 section header。
 - 新增 v2v/rv2v 的 `<Video 1>` 源视频处理规则。
-- 新增 Codex 安装/上传说明和可复制指令（`CODEX_INSTALL.md`、`AGENTS.md`）。
-- 新增 `MANIFEST.json`：文件清单 + sha256 完整性校验。
-- 新增 `templates/director_r2v_master.txt` 与 `examples/director_r2v_10s_three_image_story.txt`。
-- `templates/ref2va_master.txt` 从空段名骨架扩写为带角色注释的可填写骨架。
-- 增强自动测试：精确检查 Base 首行、六段顺序、Speaker/Shot/Ref2VA 关键规则和 Director 文件存在性，通过输出 `OK v1.7`。
-- README 重写为 v1.7 门面页，新增导演台映射表、Subject/Picture 语义、因果桥、common prompt 策略与 v1.6 升级说明。
-- 交叉验证日期更新至 2026-08-29，来源扩展到四层：MiniMax Base Guide、MiniMax Full-reference Guide、MiniMax + ComfyUI 运行时文档、AIMixer Director README。
+- 新增 Codex 安装/上传说明和可复制指令。
+- 增强自动测试：精确检查 Base 首行、六段顺序、Speaker/Shot/Ref2VA 关键规则和 Director 文件存在性。
+- 交叉验证日期更新至 2026-08-29。
 
 ## v1.6 rebuild — 2026-08-11
 
-- Kept the original v1.6 product name and broad all-domain positioning.
-- Rebuilt the core hierarchy from scratch.
-- Preserved official MiniMax H3 base/ref prompt guides as hard grammar sources.
-- Added 50-use-case production router.
-- Added task profiles: official_full, official_compact, director, identity_lock, edit_lock, motion_reference, audio_control, creative_max.
-- Added reference conflict priority and production lock system.
-- Added prompt repair engine.
-- Added dedicated playbooks for Ref2VA, dialogue/audio, camera/action, and failure repair.
-- Removed the universal >10s dialogue hard rule; official H3 supports 4–15s output.
-- Kept H3-Context-IR clearly separate from local prompt heuristics.
-- Added cross-validation and source register.
+- 保留全域 H3 生产定位。
+- 以 MiniMax 官方 Base / Ref Prompt Guide 作为硬语法源。
+- 增加用途路由、生产锁、失败修复、RunningHub/ComfyUI awareness。

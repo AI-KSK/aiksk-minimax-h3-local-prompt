@@ -66,14 +66,17 @@ Priority: camera-body relationship.
 - keep head/body movement physically plausible;
 - avoid switching to third-person unless intentionally cut.
 
-## 8. Action / fight choreography
+## 8. Action / fight choreography — dedicated specialist module
 
-Priority: clear contact geometry and readable action chain.
+Priority: two-fighter identity → readable contact → counterattack causality → clear recovery → camera/audio.
 
-- define left/right hand or weapon when relevant;
-- define attack direction, block, impact and recovery;
-- avoid multiple simultaneous impossible attacks;
-- keep camera simpler than the body choreography.
+- Route detailed requests to `references/playbooks/fight-choreography.md` and use its short/mid/long fight-beat compiler.
+- Establish two distinct fighters with stable screen positions, costume, face and move/weapon ownership.
+- Define each attack's limb/weapon, path and target; then block/contact, recoil, footwork and landing.
+- Separate grounded hand-to-hand, weapon fighting, GunFu, and general motion repair; do not force one fight LoRA combination on all genres.
+- In Ref2VA use independent `<Subject N>` identities sourced from real `<Picture N>` assets and do not infer missing audio/video references.
+- For existing single-stage JOKER141 + Veda flows, A0–A8 are `LoraLoaderModelOnly.strength_model` test presets, not official prompt syntax; read `references/playbooks/fight-lora-presets.json`.
+- Keep camera simpler than body choreography, align strike SFX with contact and avoid excessive effects hiding human movement.
 
 ## 9. Transformation / creature / fantasy VFX
 

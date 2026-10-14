@@ -13,13 +13,13 @@
 - small controlled orbit or push-in;
 - specular/material highlights move, geometry does not.
 
-## Fight beat
+## Fight beat (read fight-choreography.md for full production rules)
 
-- establish both bodies;
-- define attack limb/weapon and direction;
-- define contact/block;
-- define reaction/recovery;
-- one camera move.
+- establish Fighter A/B, stable screen left/right, foot contacts and a visible gap;
+- define the attacking limb / held weapon, physical path, target and who owns it;
+- show visible contact, parry or miss, then momentum/reaction and recovery;
+- change initiative through an actual counter and weight transfer, not by teleporting;
+- use one readable camera move and precisely timed impact audio.
 
 ## Transformation
 

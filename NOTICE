@@ -1,0 +1,50 @@
+AIKSK MiniMax H3 Prompt Engineering Skill
+Copyright 2026 AI-KSK
+
+Apache License 2.0
+------------------
+The original materials authored for AIKSK in this repository are licensed
+under the Apache License, Version 2.0 (see LICENSE). The grant covers:
+
+  - SKILL.md, AGENTS.md, CODEX_INSTALL.md, CHANGELOG.md, README.md;
+  - the production rules and playbooks under references/ (excluding
+    references/official/, see below): references/director/,
+    references/playbooks/, CROSS_VALIDATION.md, SOURCE_REGISTER.md;
+  - the prompt templates under templates/ and the worked examples under
+    examples/;
+  - the offline helper script scripts/sync_fight_workflow.py and the tests
+    under tests/;
+  - the ComfyUI workflow JSON under integrations/.
+
+It does NOT apply to, and grants no rights in:
+
+  - references/official/base-en.txt and references/official/ref-en.txt,
+    which are MiniMax official prompt-guide texts, reproduced verbatim as
+    the hard syntax source of this project. They remain the property of
+    MiniMax and are governed by MiniMax's own terms. They are stored
+    byte-identically and are regression-checked against fixed SHA-256
+    values in tests/test_structure.py;
+  - the MiniMax H3 model itself, its weights, and any runtime service;
+  - third-party ComfyUI custom nodes referenced by the workflow JSON
+    (for example AIMixer / ComfyUI_MiniMaxH3_Director, Veda, and the
+    JOKER141 martial-arts LoRA family). Only node names, filenames and
+    experimental starting weights are recorded here; no upstream source
+    code is copied or redistributed;
+  - any third-party artwork, sample image or media.
+
+Third-party notes
+-----------------
+The martial-arts LoRA weights recorded in
+references/playbooks/fight-lora-presets.json are experimental starting
+values for the JOKER141 LoRA family. They are runtime/model configuration,
+not part of the official MiniMax H3 prompt grammar, and are not bundled or
+redistributed here. Their upstream license terms apply.
+
+No model weights, API keys, cookies, signed URLs, private sample media or
+GPU run logs are included in this repository.
+
+Trademarks
+----------
+MiniMax, H3, ComfyUI, RunningHub, AIMixer and other names are trademarks of
+their respective owners. This project is an independent prompt-engineering
+skill and implies no endorsement or affiliation.

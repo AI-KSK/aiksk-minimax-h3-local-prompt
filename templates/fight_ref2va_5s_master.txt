@@ -1,0 +1,22 @@
+subject_definitions:
+<Subject 1> is Fighter A, identified by <Picture 1>, preserving [distinct facial identity, hairstyle, clothing, body proportions, unique markings].
+<Subject 2> is Fighter B, identified by <Picture 2>, preserving [distinct facial identity, hairstyle, clothing, body proportions, unique markings].
+[Define a standalone <Picture N> only if that actual Picture independently anchors opening, keyframe, final frame or shot composition; confirm material indices first.]
+
+summary:
+[reference generation] The target video depicts one coherent [unarmed/weapon] exchange between <Subject 1> and <Subject 2>, retaining each person's identity and outfit while creating new motion. <Picture 1> and <Picture 2> provide identity references, not different storyboard shots.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - [face, clothes, body silhouette, distinguishing features].
+<Subject 2> (appears in [Shot 1]): fully_preserved - [face, clothes, body silhouette, distinguishing features].
+
+detailed_description:
+[1–2 English style sentences preceding Shot 1; remove leading whitespace before field label in final prompt.]
+[Shot 1] [Scene and trigger words selected by A0–A8 / BASE; actual two reference images lock identities, consistent axis and medium-wide full-body framing]. [Approx. 0–1 sec ready stance] → [1–2.2 sec A attacks B's specified target; B blocks; physical contact] → [2.2–3.65 sec B counters, A recoils/evades with visible balance transfer] → [3.65–5.17 sec both recover and land on a recognizable final position]. [Single dominant camera behavior, no identity swapping, no duplicated limbs or weapons.]
+[Fill approximately 350–500 English words when delivering full Ref2VA generation prompts; placeholders in this template are scaffolding only.]
+
+overall_soundscape:
+[Physical sounds aligned with attack, block, breathing and feet. No invented audio reference.]
+
+non_diegetic_music:
+[Music for viewer only, or N/A.]

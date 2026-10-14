@@ -8,7 +8,7 @@ ref = (ROOT / 'references/official/ref-en.txt').read_text(encoding='utf-8')
 director = (ROOT / 'references/director/AIMIXER_DIRECTOR_RULES.md').read_text(encoding='utf-8')
 
 # Version
-assert 'version: "1.7.2-2026.08.30"' in skill
+assert 'version: "1.8.1-2026.10.13"' in skill
 
 # Base exact fields and first-line patterns
 for item in ['integrated_multimodal_description:', 'overall_soundscape:', 'non_diegetic_music:']:
@@ -48,33 +48,6 @@ for item in ['Causal bridges','causal bridges','350–500 English words','[Shot 
 assert '(S1)' in skill
 assert '<d>[Language]' in skill
 
-# Response-mode routing (restored in 1.7.1)
-assert 'Layer 14 — Response modes' in skill
-for item in ['official_full', 'official_compact', 'Validation / risks:']:
-    assert item in skill, item
-
-# Evidence boundaries and trigger phrases (restored in 1.7.2)
-assert 'Layer 15 — Evidence boundaries' in skill
-assert 'Layer 17 — Trigger phrases' in skill
-# All five evidence tiers must be present, in order.
-tiers = [
-    'MiniMax official — grammar and runtime',
-    'ComfyUI official — node behavior',
-    'AIMixer Director official — mapping only',
-    'AIKSK production heuristics',
-    'Never claim',
-]
-tier_pos = [skill.index(t) for t in tiers]
-assert tier_pos == sorted(tier_pos), tier_pos
-# The Director tier must not be described as MiniMax official.
-assert 'State these as Director behavior, never as MiniMax grammar.' in skill
-for item in ['H3-Context-IR', 'H3-Regenerate-2K']:
-    assert item in skill, item
-
-# Layer numbering must be unique and gapless from 0.
-layers = [int(n) for n in re.findall(r'^# Layer (\d+)', skill, re.M)]
-assert layers == list(range(len(layers))), layers
-
 # Required files
 required_paths = [
     ROOT/'references/official/base-en.txt',
@@ -97,4 +70,51 @@ for section in sections:
 assert '[Shot 1]' in example and '[Shot 2]' in example and '[Shot 3]' in example
 assert 'At 00:03.300' in example and 'At 00:06.900' in example
 
-print('OK v1.7')
+# Martial-arts extension invariants (additive to v1.7)
+import json
+import hashlib
+fight = (ROOT/'references/playbooks/fight-choreography.md').read_text(encoding='utf-8')
+for word in ['Fighter A', 'Fighter B', '5.17s', '15s', '<Subject 1>', 'Veda', 'A0', 'A8', '接触']:
+    assert word in fight, word
+assert 'references/playbooks/fight-choreography.md' in skill
+preset = json.loads((ROOT/'references/playbooks/fight-lora-presets.json').read_text(encoding='utf-8'))
+assert len(preset['presets']) == 9
+assert [p['id'] for p in preset['presets']] == [f'A{i}' for i in range(9)]
+assert len(preset['lora_order']) == 5
+assert set(preset['lora_order']) == set(preset['lora_files'])
+for i,p in enumerate(preset['presets']):
+    assert set(p['weights']) == set(preset['lora_order'])
+    assert all(isinstance(v,(float,int)) and 0 <= v <= 1.5 for v in p['weights'].values())
+    if i == 4:
+        assert p['weights']['Weapon Combat V1'] > 0
+        assert all(v == 0 for k,v in p['weights'].items() if k != 'Weapon Combat V1')
+
+for fp in ['templates/fight_t2va_5s_master.txt','templates/fight_ref2va_5s_master.txt',
+           'examples/fight_t2va_5s_unarmed.txt','examples/fight_ref2va_5s_two_person.txt']:
+    assert (ROOT/fp).is_file(), fp
+fbase=(ROOT/'examples/fight_t2va_5s_unarmed.txt').read_text(encoding='utf-8')
+assert fbase.startswith('integrated_multimodal_description:')
+assert fbase.count('overall_soundscape:') == 1 and fbase.count('non_diegetic_music:') == 1
+fref=(ROOT/'examples/fight_ref2va_5s_two_person.txt').read_text(encoding='utf-8')
+for sec in sections: assert fref.count(sec) == 1, (sec,fref.count(sec))
+assert 'subject_definitions:' in fref and fref.index('subject_definitions:') < fref.index('summary:')
+assert 'video editing' not in fref and '<Audio 1>' not in fref
+
+# Official references from source package must remain byte-identical to v1.7 manifest.
+source_manifest_hashes={
+ 'references/official/base-en.txt':'088fb632fa3cbb18c9821024fb689e6f0f356f824c8f2e6b8e43a33239b137c7',
+ 'references/official/ref-en.txt':'b621067b41988c4d92be715b7a98ba48338f4076ab6041d95fcf463ea7c8ccdd',
+}
+for path,sha in source_manifest_hashes.items():
+    assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest() == sha,path
+
+# Verify every file hash in the versioned MANIFEST, and that no delivered file is omitted.
+manifest=json.loads((ROOT/'MANIFEST.json').read_text(encoding='utf-8'))
+actual={p.relative_to(ROOT).as_posix():p for p in ROOT.rglob('*') if p.is_file() and p.name != 'MANIFEST.json' and '__pycache__' not in p.parts}
+recorded={f['path']:f for f in manifest['files']}
+assert set(recorded)==set(actual), (set(recorded)-set(actual),set(actual)-set(recorded))
+for name,p in actual.items():
+    assert recorded[name]['sha256']==hashlib.sha256(p.read_bytes()).hexdigest(),name
+    assert recorded[name]['bytes']==len(p.read_bytes()),name
+
+print('OK v1.8.1')

@@ -1,0 +1,8 @@
+integrated_multimodal_description:
+[Shot 1] BUNNY. Two adult wuxia duelists cross matching but distinct practice swords in a sunlit stone courtyard; each has exactly one sword and keeps the same owner and grip. Fighter A: adult performer in dark practice clothing. Fighter B: adult performer in contrasting light practice clothing. Keep both faces, wardrobe and screen-left/screen-right assignments consistent; a medium-wide full-body shot with one slow lateral tracking motion. At 0.0-1.0 s, A stands on screen left holding one steel practice sword in the right hand and B faces A on screen right holding one sword in the right hand. At 1.0-2.2 s, A draws one clear horizontal arc; B meets the flat of A's blade with a controlled parry. At 2.2-3.65 s, their blades slide apart; B rotates the wrist and makes one reply cut while A steps diagonally aside. At 3.65-5.17 s, both lower their blades into visible guard positions, with each weapon still in its original owner's hand; no duplicated blades. No subtitles, overlays or extra fighters.
+
+overall_soundscape:
+A clean metallic sword contact exactly at the parry, footsteps and cloth movement, followed by separated steel resonance and a final steady room ambience. No dialogue.
+
+non_diegetic_music:
+N/A

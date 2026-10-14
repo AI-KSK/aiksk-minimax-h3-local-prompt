@@ -1,32 +1,30 @@
 {
   "name": "aiksk-minimax-h3-local-prompt",
-  "version": "1.7.2-2026.08.30",
-  "validated": "2026-08-29",
+  "version": "1.8.1-2026.10.13",
+  "validated_official": "2026-08-29",
+  "martial_lora_sources_cross_checked": "2026-10-13",
+  "upgraded_from": "1.8.0-2026.10.13",
+  "reproducibility": "no runtime GPU verification",
   "files": [
     {
+      "path": ".gitattributes",
+      "sha256": "8b287c23ba928e9a23f973344c5e28936c6a149df373c7f5a1b8600076feb0e1",
+      "bytes": 478
+    },
+    {
       "path": "AGENTS.md",
-      "sha256": "827642f0dd476be3c9830c9699d7b9cedb39ff78c203c2cd920e2fd0d2c4770a",
-      "bytes": 796
+      "sha256": "16741ab952135e1522f7f0b71cd5ac7fa3089c7ba9100e691dbc08fc8a6fd835",
+      "bytes": 1322
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "10bf49f76fb77807b49a7131744a5fb0ac4752b056ec326c4b8789fa99f8916b",
-      "bytes": 6035
+      "sha256": "3c33ba83cf647a6425fba01693a7eb9f6e3d3b1d2bb2588e9b9b83d93786f6a0",
+      "bytes": 3902
     },
     {
       "path": "CODEX_INSTALL.md",
-      "sha256": "e85b175c24aa1e9fbad8a641726715743e4ae19d75194cf751cf786a5016f886",
-      "bytes": 1474
-    },
-    {
-      "path": "README.md",
-      "sha256": "a5cd97d45b9935eeb6c187df8086f384954d75f4bc8d9d7bd73c406ec3d9db04",
-      "bytes": 15760
-    },
-    {
-      "path": "SKILL.md",
-      "sha256": "31e29625f763cd275de77be99b2405b3c99100256b2bf3c6827faf59eed1375a",
-      "bytes": 20902
+      "sha256": "8fea46ad64d356bab160949ca46360539cf8e88a4a9056e3e579c4133dd5370c",
+      "bytes": 1820
     },
     {
       "path": "examples/director_r2v_10s_three_image_story.txt",
@@ -34,14 +32,54 @@
       "bytes": 6240
     },
     {
-      "path": "references/CROSS_VALIDATION.md",
-      "sha256": "e61fa0e8fabde9c93f624753a8caa18d469dd4e4c4ec9e9d1d4c383e31a241f9",
-      "bytes": 3704
+      "path": "examples/fight_gunfu_A7_5s.txt",
+      "sha256": "c4e3846a75c14804338eb808df638772b638a86167324835cdac2c906a1da814",
+      "bytes": 1272
     },
     {
-      "path": "references/SOURCE_REGISTER.md",
-      "sha256": "59dd8056d925f0108ef75d4199e131748c273aeb7af95921af88a05e29563121",
-      "bytes": 1449
+      "path": "examples/fight_ref2va_5s_two_person.txt",
+      "sha256": "ba051836afc81d9ff831af81c3901d9df1cf4693672ef07b5fb67d21acfa987c",
+      "bytes": 4590
+    },
+    {
+      "path": "examples/fight_ref2va_A4_5s.txt",
+      "sha256": "fa63a11bd515f840123691cd24c22316fa5e4fd96826f9eeadfa0e5daec3ea26",
+      "bytes": 2167
+    },
+    {
+      "path": "examples/fight_t2va_5s_unarmed.txt",
+      "sha256": "6ebed0671bd1acdae1c9c2b606d732125d3415adbdc4ea58fc1639601f1170bc",
+      "bytes": 1979
+    },
+    {
+      "path": "examples/fight_weapon_A4_5s.txt",
+      "sha256": "4cee0e94845ee04fa50cee08f616ee3c766f4cf4f48c7821b5d2e5e48986c935",
+      "bytes": 1256
+    },
+    {
+      "path": "integrations/AIKSK_H3_JOKER141_九预设_T2VA_R2VA_Veda_单阶段.json",
+      "sha256": "042c1e1127ddebcb80ca83139b13d1fa7b5884c7d1c9c150f4ab89f4ad2e35cc",
+      "bytes": 67942
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "23941aad471cc7bcf7b6940f91e0dabaee683bbafe69b91350677884c28bab01",
+      "bytes": 2330
+    },
+    {
+      "path": "README.md",
+      "sha256": "eb9cc4722a192c79b98e36893eb59c28d4e56b9eb7df0d4046f25b479407d7bf",
+      "bytes": 4897
+    },
+    {
+      "path": "references/CROSS_VALIDATION.md",
+      "sha256": "0eb6a1c738a4753d900d1a0fe656824b93bda4ccc7d118dc27d6eeeb740dc82f",
+      "bytes": 5397
     },
     {
       "path": "references/director/AIMIXER_DIRECTOR_RULES.md",
@@ -65,8 +103,8 @@
     },
     {
       "path": "references/playbooks/camera-action-recipes.md",
-      "sha256": "90a9044de7a16671ec034cc1b364ad726825fa0f067dae481249e0aed8aff9d5",
-      "bytes": 682
+      "sha256": "c30c10e385430cba4a56dbffd5cc5562377cf1b5c4f8761fed6d47837536969d",
+      "bytes": 992
     },
     {
       "path": "references/playbooks/dialogue-audio-recipes.md",
@@ -75,8 +113,28 @@
     },
     {
       "path": "references/playbooks/failure-repair-matrix.md",
-      "sha256": "d521df12e0bd5ba7e9d5ab5c1907f0fb3701486beb1dae1f432be2a279e35a77",
-      "bytes": 1076
+      "sha256": "9872dc6370ed9db8c4cbd2357bbb373c887e2a1efc121a3019d4776b0e79a9bc",
+      "bytes": 1633
+    },
+    {
+      "path": "references/playbooks/fight-choreography.md",
+      "sha256": "5b7a3065ef74ba613d1698232b16b28716e1488d8698d2e3bcdb460fc7de1f10",
+      "bytes": 13810
+    },
+    {
+      "path": "references/playbooks/fight-lora-presets.json",
+      "sha256": "5c94a50d578b1e67398bca94fd4861b2d8aab74313d952e7131bfc5934abcbfd",
+      "bytes": 10289
+    },
+    {
+      "path": "references/playbooks/fight-prompt-mapping.md",
+      "sha256": "373243f41686128cc4255830ba48975bcb87867dc41bf7d1a7acb8ee8b939f10",
+      "bytes": 2694
+    },
+    {
+      "path": "references/playbooks/fight-trigger-policy.md",
+      "sha256": "4b8d0772e019c65e28faa93633397299ce03e948a9c857a3db4c06b0b79fe709",
+      "bytes": 2334
     },
     {
       "path": "references/playbooks/ref2va-reference-recipes.md",
@@ -85,13 +143,38 @@
     },
     {
       "path": "references/playbooks/use-case-catalog.md",
-      "sha256": "0ab9c3073ccfb8a26ce138ec8956290c033bdffceb32f5e1ed9b2998bdb5aa19",
-      "bytes": 11120
+      "sha256": "58377c5cbdd94f2380db283dfe40069d705624bdcdf7fc842a3859f79e5f839d",
+      "bytes": 11937
+    },
+    {
+      "path": "references/SOURCE_REGISTER.md",
+      "sha256": "1f4f304cdfb2f54df9dc1f53710bb924531b56d48e27946083d4da9d40f0f7aa",
+      "bytes": 2888
+    },
+    {
+      "path": "scripts/sync_fight_workflow.py",
+      "sha256": "a36ecff70f9147e65a459825ba79a3defd236bd2595fd5062d250d709ecab03d",
+      "bytes": 11899
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "52c9b8b34befba4796978a7d26445a50d7d82d18e13afe25732799e0712c0a9d",
+      "bytes": 20852
     },
     {
       "path": "templates/director_r2v_master.txt",
       "sha256": "6c9adaff2718112aa2a518e92201f9b0abb603fa6ecee6716c9dfc31a3c612d6",
       "bytes": 1988
+    },
+    {
+      "path": "templates/fight_ref2va_5s_master.txt",
+      "sha256": "cd8ba70a11137a82f1de9d6615e879f1f720a0bd916aa78f10e89d37a4d5570b",
+      "bytes": 1990
+    },
+    {
+      "path": "templates/fight_t2va_5s_master.txt",
+      "sha256": "0b231bc551123225c673bc4614361892d954f619f39c1ac5f39ad70f86443652",
+      "bytes": 1138
     },
     {
       "path": "templates/fl2va_master.txt",
@@ -119,9 +202,14 @@
       "bytes": 98
     },
     {
+      "path": "tests/test_fight_integration.py",
+      "sha256": "81f7abf82f4975e8fb452b0435b92a884ab6a83b49a8e7a0deb2ee6fcebe4b2a",
+      "bytes": 7444
+    },
+    {
       "path": "tests/test_structure.py",
-      "sha256": "22870a20e0ad04093e5c295cba9adf45c9c2bd4b0e798929b787bfd3d6a8fe25",
-      "bytes": 4538
+      "sha256": "c24a890fa7fa2f10e86b9e0c75b3165b97477899b19abf47f4c4752201f0c7fa",
+      "bytes": 6292
     }
   ]
 }

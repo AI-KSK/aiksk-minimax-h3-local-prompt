@@ -1,11 +1,11 @@
 ---
 name: aiksk-minimax-h3-local-prompt
-version: "1.7.2-2026.08.30"
-description: "AIKSK MiniMax H3 full-domain prompt compiler with AIMixer Director production rules. Covers Base T2VA/I2VA/FL2VA/L2VA and Full-reference Ref2VA, Director r2v/v2v/rv2v material mapping, Subject/Picture semantics, causal multi-shot transitions, identity/product/audio locks, camera/timing/dialogue, prompt repair, and reusable creative production recipes. MiniMax official grammar is always the hard source of truth; AIKSK rules are production heuristics layered on top."
+version: "1.8.1-2026.10.13"
+description: "AIKSK MiniMax H3 full-domain prompt compiler with AIMixer Director production rules. Covers Base T2VA/I2VA/FL2VA/L2VA and Full-reference Ref2VA, Director r2v/v2v/rv2v material mapping, Subject/Picture semantics, causal multi-shot transitions, identity/product/audio locks, camera/timing/dialogue, prompt repair, and dedicated wuxia/fight choreography, two-fighter identity/weapon continuity, and JOKER141 9-preset awareness. MiniMax official grammar is always the hard source of truth; AIKSK rules are production heuristics layered on top."
 compatibility: "Claude/Codex/agent harnesses that can read SKILL.md and local references; local ComfyUI/RunningHub/AIMixer Director workflows when their actual material mapping is known."
 ---
 
-# AIKSK MiniMax H3 全域提示词规范 v1.7 — Director Production
+# AIKSK MiniMax H3 全域提示词规范 v1.8.1 — Director + Fight Choreography
 
 ## 0. Governing principle
 
@@ -372,6 +372,25 @@ Use:
 
 For contact/action choreography, name direction, contact, reaction, and endpoint.
 
+## 5.3 Martial-arts specialist / 武打板块（AIKSK production layer）
+
+If the task includes 武打 / 双人对打 / 拳脚 / 刀剑 / 枪斗 / 连招 / JOKER141 / Work-Fisher, **read `references/playbooks/fight-choreography.md` before compiling**.
+
+1. Lock separate Fighter A/B identities, initial screen side and camera axis; each fighter's actions must have one owner.
+2. Compile physical fight beats as `stance → intention → attack path → contact/block → recoil/weight shift → recovery/counter → final posture`.
+3. Short ~5s clips should contain one readable exchange; longer 10–15s scenes may use more beats with causal continuity and an unambiguous landing. For ~15s, an 8-beat arc is a production planning aid, not 8 mandatory cuts.
+4. Preserve weapon quantity, hand ownership, foot contact, facial identity and clothing; realistic choreography should not be buried in VFX particles or frantic camera cuts.
+5. Keep `overall_soundscape` contact-aligned; use stable S IDs only for actual speakers, not merely for two visible fighters.
+6. For Ref2VA, two different fighters are two distinct `<Subject N>` identities; `<Picture N>` only refers to actual image assets, and reference-video motion alone is not `video editing`.
+7. When asked for a LoRA plan, read `references/playbooks/fight-lora-presets.json`: A0–A8 are nine **experimental preset configs**, not prompt syntax, not official MiniMax rules and not guaranteed optimal.
+   - **Also read** `references/playbooks/fight-trigger-policy.md` and `references/playbooks/fight-prompt-mapping.md`. Choose triggers only for nonzero LoRAs: Combat default no trigger (`prfight2`/`prfin1` opt-in); Weapon/GunFu `BUNNY`; Motion optional `bunny_crisp_motion`; Fight Flow one matching interaction trigger (`Unarmed combat interaction` / `Melee weapon interaction` / `Gun-fu interaction`).
+   - When selecting A0–A8, generate the **matching scene type** as well as weight list. Never use A4/A5–A7 with a stale unarmed prompt. Use separate `BASE` for all JOKER141 weights zero while keeping Turbo and Veda active.
+   - If the user needs a ComfyUI JSON rather than a prompt, `scripts/sync_fight_workflow.py` exports an aligned local JSON from the bundled `integrations/` template. **Switching a preset later inside ComfyUI does not automatically rewrite the prompt**.
+   - R2VA 4-step Turbo combined with Veda is a compatibility experiment; published Predictor training context centers on 8-step Turbo. Record this limitation in evaluation output.
+8. Our current H3 T2VA/R2VA + Veda + JOKER141 workflow is **single-pass**. Do not require Work-Fisher's two-stage latent upscaler for prompt generation; it is an optional, separate runtime experiment.
+
+Templates: `templates/fight_t2va_5s_master.txt`, `templates/fight_ref2va_5s_master.txt`; complete samples: `examples/fight_t2va_5s_unarmed.txt`, `examples/fight_ref2va_5s_two_person.txt`.
+
 ---
 
 # Layer 6 — Dialogue, text, and audio
@@ -520,6 +539,9 @@ These are AIKSK profiles, not MiniMax modes.
 - `motion_reference` — transfer body/camera/rhythm without accidental identity/environment copying.
 - `audio_control` — voice/music/sound relationship priority.
 - `creative_max` — creative enrichment within user constraints.
+- `fight_choreography` — readable attack/block/counter beats with contact, balance and screen-axis continuity.
+- `fight_identity_lock` — separate two-fighter IDs, wardrobe, face and weapon ownership across fight beats.
+- `fight_prompt_repair` — fix incomplete contact, broken defense/recovery, stance teleport or mixed fighter roles one variable at a time.
 
 ---
 
@@ -562,122 +584,23 @@ Before returning a prompt, verify:
 14. soundscape does not duplicate dialogue;
 15. audience-only score is separated from diegetic sound;
 16. Ref2VA generation detail is sufficiently explicit, normally around 350–500 English words;
-17. every claim respects the Layer 15 evidence tiers — no AIKSK heuristic and
-    no Director behavior is labeled as MiniMax official.
+17. no AIKSK heuristic is falsely labeled official.
+18. if martial arts: fighters, contact/reaction, footwork, weapon ownership and action endpoints are explicitly checkable.
+19. if martial arts: LoRA/Veda configuration is not confused with official prompt grammar.
 
 ---
 
-# Layer 14 — Response modes
-
-Match the delivery shape to what was actually asked.
-
-## User asks only for a prompt
-
-Return only the final copyable prompt in the correct official structure. No commentary, no analysis scaffolding.
-
-## User asks for workflow / production output
-
-Return:
-
-```text
-Family:
-Director task:
-Profile:
-Duration:
-Asset map:
-Reference map:
-Locks:
-Final prompt:
-Validation / risks:
-```
-
-## User asks for multiple variants
-
-Default variants:
-
-1. `official_full`
-2. `official_compact`
-3. one task-specific profile (`director`, `identity_lock`, `edit_lock`, `motion_reference`, or `audio_control`)
-
-Do not generate meaningless stylistic variants that differ only by adjectives.
-
----
-
-# Layer 15 — Evidence boundaries
-
-Every claim in a reply must be traceable to one of these tiers. When tiers
-disagree, the earlier tier wins. Never promote a lower tier to a higher one.
-
-## 15.1 MiniMax official — grammar and runtime
-
-May be stated as official when the bundled guides support them:
-
-- the Base and Full-reference prompt-mode structures;
-- Base three core fields, and their order;
-- Ref2VA six-section order;
-- the four reference label types and their semantics;
-- official `summary` task types;
-- official visual and audio retention markers;
-- speaker IDs and `<d>[Language] ...</d>` dialogue formatting;
-- shot/cut notation and timestamp rules;
-- camera-motion guidance;
-- that an identity/costume/style-only image belongs inside a Subject, and that
-  a standalone Picture is for frame, composition-anchor or storyboard roles;
-- H3 runtime specs: 4–15s output, 24 FPS, stereo 32 kHz, and the Ref2VA input
-  limits recorded in the source register.
-
-## 15.2 ComfyUI official — node behavior
-
-- native H3 node families and the workflows they support;
-- frame-grid behavior, which is why prompt timestamps follow the effective
-  workflow duration rather than the requested duration.
-
-## 15.3 AIMixer Director official — mapping only
-
-Official **to the Director project**, not to MiniMax:
-
-- the six Director tasks;
-- `t2v`/`i2v`/`fl2v` → `fl2va`, `r2v`/`v2v`/`rv2v` → `ref2va`;
-- R2V material tags and the `@` picker;
-- common-prompt concatenation onto each group prompt;
-- automatic `<Video 1>` binding of the v2v/rv2v source segment.
-
-State these as Director behavior, never as MiniMax grammar. They describe one
-custom node set and can change with its version, so defer to the actual
-installed workflow whenever it is visible.
-
-## 15.4 AIKSK production heuristics
-
-Usable, but must be labeled internally as heuristics:
-
-- causal bridges across cuts;
-- output profiles;
-- the lock hierarchy;
-- the operational Subject-vs-Picture decision procedure built on top of 15.1;
-- multi-reference conflict priority;
-- story/use-case routers and playbooks;
-- failure-repair recipes;
-- dialogue-density splitting;
-- response-mode shaping in Layer 14.
-
-## 15.5 Never claim
-
-- that this skill reproduces official H3-Context-IR exactly;
-- that local prompt rewriting equals H3-Regenerate-2K;
-- that an AIKSK heuristic or a Director behavior is a MiniMax official
-  requirement;
-- that a community LoRA or third-party custom node is an official MiniMax
-  feature;
-- that unseen source media contains any specific detail.
-
----
-
-# Layer 16 — Supporting files
+# Layer 14 — Supporting files
 
 - Official syntax: `references/official/base-en.txt`, `references/official/ref-en.txt`
 - Director rules: `references/director/AIMIXER_DIRECTOR_RULES.md`
 - Plain-language logic: `references/director/DIRECTOR_PROMPT_LOGIC_ZH.md`
 - Use-case router: `references/playbooks/use-case-catalog.md`
+- Dedicated martial arts: `references/playbooks/fight-choreography.md`
+- Nine JOKER141 test presets + BASE control: `references/playbooks/fight-lora-presets.json`
+- Trigger policy: `references/playbooks/fight-trigger-policy.md`
+- Preset-to-prompt mapping and offline JSON exporter: `references/playbooks/fight-prompt-mapping.md`, `scripts/sync_fight_workflow.py`
+- Fight templates/examples: `templates/fight_t2va_5s_master.txt`, `templates/fight_ref2va_5s_master.txt`, `examples/fight_t2va_5s_unarmed.txt`, `examples/fight_ref2va_5s_two_person.txt`
 - Camera/action recipes: `references/playbooks/camera-action-recipes.md`
 - Dialogue/audio recipes: `references/playbooks/dialogue-audio-recipes.md`
 - Ref2VA recipes: `references/playbooks/ref2va-reference-recipes.md`
@@ -685,21 +608,3 @@ Usable, but must be labeled internally as heuristics:
 - Director R2V template: `templates/director_r2v_master.txt`
 - 10-second three-image example: `examples/director_r2v_10s_three_image_story.txt`
 - Source validation: `references/CROSS_VALIDATION.md`, `references/SOURCE_REGISTER.md`
-
----
-
-# Layer 17 — Trigger phrases
-
-Use this skill when the request mentions or implies:
-
-- MiniMax H3 prompt / 提示词 / Prompt;
-- T2VA / I2VA / FL2VA / L2VA / Ref2VA;
-- Director / 导演台 / AIMixer / ComfyUI_MiniMaxH3_Director;
-- `t2v` / `i2v` / `fl2v` / `r2v` / `v2v` / `rv2v` / 分组 / 公共提示词;
-- 文生视频 / 图生视频 / 首尾帧 / 尾帧 / 参考生视频;
-- 参考图 / 参考视频 / 参考音频 / 声音参考 / 素材编号 / Subject 定义;
-- 视频编辑 / 续写 / 人物一致性 / 动作参考;
-- 镜头设计 / 运镜 / 分镜 / 转场 / 因果衔接 / 音效 / 对白 / 歌词 / MV;
-- 产品广告 / 品牌片 / 3D 动画 / 游戏开场 / 纸艺 / 拼贴;
-- AI 短剧 / 数字人 / 双人对话 / 打斗 / 变身 / 舞蹈;
-- H3 Prompt 修复 / 重写 / 压缩 / 扩写 / 诊断 / 幻灯片感。

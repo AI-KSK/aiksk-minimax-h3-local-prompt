@@ -1,0 +1,8 @@
+integrated_multimodal_description:
+[Shot 1] BUNNY. Two adult performers act out a fictional cinematic gun-fu exchange on a controlled movie set; the scene emphasizes continuity and readable dramatic blocking rather than actionable tactical instruction. Fighter A: adult performer in dark practice clothing. Fighter B: adult performer in contrasting light practice clothing. Keep both faces, wardrobe and screen-left/screen-right assignments consistent; a medium-wide full-body shot with one slow lateral tracking motion. At 0.0-1.0 s, the two figures face each other in a medium-wide shot, clearly separated; one prop firearm belongs to each character. At 1.0-2.2 s, A makes a short dramatic feint and B turns defensively, their positions remaining clear. At 2.2-3.65 s, B shifts direction in a single stylized counter-movement, A staggers back and recovers balance, with no abrupt disappearance or swapping of props. At 3.65-5.17 s, both settle into a visibly separated final pose with consistent hands, wardrobes, and prop ownership. No subtitles, overlays or extra fighters.
+
+overall_soundscape:
+Cinematic prop movement, footsteps, fabric movement, a restrained stage-impact cue and room reflections synchronized to visible beats. No dialogue.
+
+non_diegetic_music:
+N/A

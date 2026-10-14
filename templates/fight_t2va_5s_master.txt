@@ -1,0 +1,8 @@
+integrated_multimodal_description:
+[Shot 1] [Scene and trigger words selected by A0–A8 / BASE per fight-prompt-mapping.md; distinct Fighter A/B identities, starting screen positions and camera axis]. Both remain distinct, full-body readable and on one consistent screen axis. [00:00–00:01] [establish both guards and foot placement]. [00:01–00:02.2] [A uses specified hand or weapon for one directed attack; B blocks at the stated point]. [00:02.2–00:03.65] [B counters; describe A's slip or body recoil, contact and weight transfer]. [00:03.65–00:05.17] [both land, separate or stabilize while preserving outfits, body identities, weapon ownership, camera axis]. Use [a single dominant camera move]; no jump cuts that hide critical contact. [Only include dialog if explicitly requested, with stable S IDs and <d>[Language] exact spoken words].
+
+overall_soundscape:
+[Only diegetic sound: foot contact, movement, clothing movement, attack/block/impact sounds precisely aligned with physical events, short breath and environmental ambience. No dialogue duplication.]
+
+non_diegetic_music:
+[Audible-only-to-viewer scoring, or N/A.]

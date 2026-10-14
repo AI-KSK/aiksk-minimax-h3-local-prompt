@@ -1,0 +1,23 @@
+# Intended task: Ref2VA reference generation, with exactly two actual image references.
+# Confirm Director @ indices before use; remove these comment lines before pasting.
+
+subject_definitions:
+<Subject 1> is Fighter A, the same adult woman established by <Picture 1>, preserving her recognizable facial proportions, straight dark hair tied in a high ponytail, charcoal training jacket, dark trousers, and slim athletic silhouette.
+<Subject 2> is Fighter B, the same adult man established by <Picture 2>, preserving his recognizable facial proportions, short dark hair, sand-colored linen jacket, black trousers, and broader athletic silhouette.
+
+summary:
+[reference generation] The target video uses <Picture 1> and <Picture 2> only as character identity and wardrobe references. <Subject 1> and <Subject 2> perform a continuous five-second martial-arts exchange in a wet stone courtyard, with each attack answered by a legible defensive reaction and both characters ending in stable positions. There is no source-video edit or copied audio.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - the same face, ponytail, charcoal jacket, dark trousers, and body silhouette established by <Picture 1> remain recognizable as pose and expression change.
+<Subject 2> (appears in [Shot 1]): fully_preserved - the same face, short dark hair, sand linen jacket, black trousers, and body silhouette established by <Picture 2> remain recognizable as pose and expression change.
+
+detailed_description:
+The target video is a grounded live-action martial-arts sequence in a quiet traditional stone courtyard after rainfall, with soft overcast daylight and wet stone reflections. The scene prioritizes clear anatomy, recognizable identities, clean physical contact and a stable spatial axis rather than elaborate visual effects.
+[Shot 1] <Subject 1> appears on screen left and <Subject 2> appears on screen right in one readable medium-wide full-body frame. A low stone wall and a wooden doorway anchor the background; both characters remain in that same environment without a cut. Their outfits match their respective references: charcoal fabric moves around <Subject 1>'s waist and sleeves, while the loose sand-colored jacket on <Subject 2> folds naturally across his shoulders. The camera tracks gently sideways at nearly the same height throughout, so the audience can always tell which fighter is attacking and which is defending. For the first second, <Subject 1> plants her left foot slightly forward and raises her guard, watching <Subject 2>'s lead shoulder. <Subject 2> settles his stance on the opposite side, left forearm poised to parry, weight balanced over the back foot. Neither character changes sides or suddenly jumps forward. As <Subject 1> steps toward him, her right shoulder rotates and drives one compact straight punch along a visible path toward his upper chest. <Subject 2> shifts his weight backward and moves his left forearm outward to intercept it. Their arms visibly meet. The redirected fist passes just outside his shoulder instead of passing through his body. The short collision changes both of their upper-body angles: <Subject 1>'s forward momentum carries her torso slightly past center while <Subject 2> turns off the attack line. With that opening established, <Subject 2> pivots on his lead foot and throws one short right body hook. <Subject 1> raises her left elbow and rolls her torso away, catching the counter against her tightened guard. The blocked impact visibly compresses their sleeves and makes <Subject 1> step backward with her right foot to regain balance. Both fighters stay anatomically coherent and maintain their original hair and costume designs. In the last second, <Subject 2> retracts his punch, sets his heel down, and resumes a guarded stance. <Subject 1> moves a full step away, plants both feet, breathes out, and faces him again from screen left. The ending holds both fighters at a clear arm's-length distance, with no unexplained motion, no duplicated limbs, no new weapons, no artificial light streaks and no identity swapping.
+
+overall_soundscape:
+A quiet courtyard ambience with fine dripping water and damp footfalls sits under soft fabric swishes, two short exertion breaths, one forearm parry and one blocked body impact. Each impact lands at the instant of visible contact. Neither fighter speaks; no external audio reference is claimed.
+
+non_diegetic_music:
+A sparse, low frame-drum rhythm provides a subtle cinematic pace, receding during the last settling stance without masking the physical sounds.

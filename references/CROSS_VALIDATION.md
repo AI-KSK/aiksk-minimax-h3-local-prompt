@@ -66,3 +66,24 @@ No primary-source conflict was found that requires a Director-specific replaceme
 Therefore v1.7 uses this hierarchy:
 
 **MiniMax official grammar → actual Director material mapping → user intent → AIKSK production heuristics.**
+
+
+## 2026-10-13 — Fight-addon external source cross-check (v1.8.1)
+
+### Independent axes
+
+1. **Official prompt grammar:** protected original MiniMax Base/Ref text stays byte-identical; no LoRA/Veda keys promoted into official H3 fields.
+2. **Author LoRA statements:** five JOKER141 model cards checked for triggers, use context, stacking warnings. Combat default no trigger, optional `prfight2` / `prfin1`; Weapon/GunFu `BUNNY`; Motion optional `bunny_crisp_motion`; Fight Flow selects exactly one interaction-class phrase. Reference register includes primary URLs.
+3. **Workflow engineering:** A0–A8 remain the nine numbered presets; BASE sets five manual weights to zero (without disabling Turbo or Veda). Offline exporter uses actual JSON node IDs and includes smoke tests for A4, A7, R2VA and BASE; node validity is still **not** a GPU inference validation.
+
+### Discrepancies corrected
+
+- Added prompt-strategy mapping and trigger selection; never use unarmed prompt with Weapon/GunFu preset.
+- Added independent BASE control and non-overwriting exporter.
+- Documented 4-step R2VA Veda outside main 8-step training conditions.
+- Explicit limitation: ComfyUI runtime preset control **does not** automatically recompile prompt text. Rerun exporter after changing recipe.
+- Original official-source validation date was 2026-08-29; source **rechecked for martials** on 2026-10-13 without claiming all upstream guides were byte-for-byte current.
+
+### Verification scope
+
+Zip content/hashes, official unchanged files, prompt grammar, 9 presets plus BASE, source references, sync script and bundled JSON structure validated locally. No MiniMax, ComfyUI, Veda, or GPU inference was executed.
