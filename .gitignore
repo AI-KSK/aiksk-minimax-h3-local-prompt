@@ -1,0 +1,22 @@
+# Python bytecode caches: never publish build artefacts.
+# They can embed absolute local paths and are not part of the delivered skill.
+__pycache__/
+*.py[cod]
+
+# Local scratch and editor state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never commit model weights or generated media to a prompt-skill repository
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.gguf
+*.bin
+*.mp4
+*.mov
+*.avi

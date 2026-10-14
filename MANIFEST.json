@@ -12,6 +12,11 @@
       "bytes": 478
     },
     {
+      "path": ".gitignore",
+      "sha256": "4ac35668f4c7e36dd9f037422b9e5a0e42015ef0ce0a9840d86f9b8154108459",
+      "bytes": 377
+    },
+    {
       "path": "AGENTS.md",
       "sha256": "16741ab952135e1522f7f0b71cd5ac7fa3089c7ba9100e691dbc08fc8a6fd835",
       "bytes": 1322
